@@ -1,0 +1,21 @@
+body {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 10px;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.cards-layout {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.layout-3-column {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}

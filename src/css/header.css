@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  box-shadow: 0px 0px 4px #979595;
+  height: 80px;
+  width: 100vw;
+  background-color: #fdfcfc;
+}
+
+.header::before {
+  content: '';
+  display: block;
+  width: 120px;
+}
+
+.logo {
+  color: #EB6864;
+  font-weight: 700;
+  font-size: 2rem;
+}

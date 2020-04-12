@@ -1,0 +1,77 @@
+.category-card {
+  width: 300px;
+  padding-bottom: 30px;
+  box-shadow: 0px 0px 3px #979595;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card:hover .category-card__icon {
+  transform: rotate(20deg);
+}
+
+.category-card_train {
+  border: 1.5px solid rgb(243, 229, 37);
+}
+
+.category-card_play {
+  border: 1.5px solid rgb(64, 125, 187);
+}
+.category-card__header {
+  padding-top: 5px;
+  text-align: center;
+  height: 60px;
+}
+
+.category-card__header_train {
+  background-color: rgb(243, 229, 37);
+}
+
+.category-card__header_play {
+  background-color: rgb(64, 125, 187);
+}
+
+.category-car__title {
+  margin-bottom: 10px;
+}
+
+.category-card__icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+
+.ico_actions_1 {
+  background-image: url("../img/category_card_img/actions_1.png");
+}
+
+.ico_actions_2 {
+  background-image: url("../img/category_card_img/actions_2.png");
+}
+
+.ico_animals_1 {
+  background-image: url("../img/category_card_img/animals_1.png");
+}
+
+.ico_animals_2 {
+  background-image: url("../img/category_card_img/animals_2.png");
+}
+
+.ico_clothes {
+  background-image: url("../img/category_card_img/clothes.png");
+}
+
+.ico_emotions {
+  background-image: url("../img/category_card_img/emotions.png");
+}
