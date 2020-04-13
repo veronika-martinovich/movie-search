@@ -7,7 +7,7 @@ function generateCategoryCards(categories) {
   categories.forEach((category) => {
     const categoryCard = new CategoryCard(
       category.title,
-      category.iconTitle,
+      category.name,
       state.mode
     );
     categoryCards.push(categoryCard);

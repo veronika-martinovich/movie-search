@@ -7,12 +7,19 @@ body {
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.page-heading {
+  color: rgb(134, 110, 145);
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .cards-layout {
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .layout-3-column {

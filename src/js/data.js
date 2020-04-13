@@ -1,10 +1,10 @@
 const categories = [
-  { title: "Actions pt. 1", iconTitle: "actions_1" },
-  { title: "Actions pt. 2", iconTitle: "actions_2" },
-  { title: "Animals pt. 1", iconTitle: "animals_1" },
-  { title: "Animals pt. 2", iconTitle: "animals_2" },
-  { title: "Clothes", iconTitle: "clothes" },
-  { title: "Emotions", iconTitle: "emotions" }
+  { title: "Actions pt. 1", name: "actions_1" },
+  { title: "Actions pt. 2", name: "actions_2" },
+  { title: "Animals pt. 1", name: "animals_1" },
+  { title: "Animals pt. 2", name: "animals_2" },
+  { title: "Clothes", name: "clothes" },
+  { title: "Emotions", name: "emotions" }
 ];
 
 const words = [

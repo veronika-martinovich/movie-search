@@ -7,7 +7,7 @@ export function generatePage(page) {
   const cardsLayout = document.querySelector(".cards-layout");
   cardsLayout.innerHTML = '';
   switch (page) {
-    case "all":
+    case "all_categories":
       generateCategoryCards(categories);
       break;
     case "actions_1":

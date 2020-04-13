@@ -32,7 +32,7 @@
 .nav__link {
   text-decoration: none;
   color: rgb(134, 110, 145);
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .nav__link:hover {

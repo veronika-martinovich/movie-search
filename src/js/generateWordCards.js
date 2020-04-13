@@ -1,8 +1,9 @@
 import { WordCard } from "./WordCard";
 import { state } from "./state";
 
-const wordCards = [];
+let wordCards = [];
 function generateWordCards(words) {
+  wordCards = [];
   const cardsLayout = document.querySelector(".cards-layout");
   words.forEach((word) => {
     const wordCard = new WordCard(
@@ -15,6 +16,7 @@ function generateWordCards(words) {
     wordCards.push(wordCard);
     cardsLayout.append(wordCard.createWordCard());
   });
+  state.activeWordCards = wordCards;
 }
 
 export { wordCards, generateWordCards };
