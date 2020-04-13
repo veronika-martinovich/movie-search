@@ -2,6 +2,7 @@ import { MODE1, MODE2, state } from "./state";
 import { categoryCards } from "./generateCategoryCards";
 import { generatePage } from "./generatePage";
 import { changePageHeading } from "./changePageHeading";
+import { changeNavLinksStyles } from "./changeNavLinksStyles";
 
 const hamburgerIcon = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
@@ -38,10 +39,7 @@ switchCheckbox.addEventListener('click', function(){
 navList.addEventListener('click', function(e) {
   if (e.target.tagName === 'A') {
     state.page = e.target.dataset.category;
-    navLinks.forEach(link => {
-      link.classList.remove('nav__link_active');
-    })
-    e.target.classList.add('nav__link_active');
+    changeNavLinksStyles(e.target);
     hamburgerIcon.classList.toggle('hamburger_arrow');
     nav.classList.toggle('nav_active');
     changePageHeading(e.target.dataset.category);
@@ -53,7 +51,18 @@ navList.addEventListener('click', function(e) {
 cardsLayout.addEventListener('click', function(e) {
   if (e.target.classList.contains('category-card')) {
     state.page = e.target.dataset.category;
-    changePageHeading(e.target.dataset.category);
+    changeNavLinksStyles(Array.from(navLinks).find(item => {
+      return item.dataset.category === state.page
+    }));
+    changePageHeading(state.page);
+    generatePage(state.page);
+  }
+  if (e.target.classList.contains('category-card__icon')) {
+    state.page = e.target.classList[e.target.classList.length - 1].slice(4);
+    changeNavLinksStyles(Array.from(navLinks).find(item => {
+      return item.dataset.category === state.page
+    }));
+    changePageHeading(state.page);
     generatePage(state.page);
   }
 })
