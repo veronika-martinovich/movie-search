@@ -8,5 +8,8 @@
 @import './css/nav.css';
 @import './css/switch.css';
 
-/* Sets */
+/* Category cards */
 @import './css/category-card.css';
+
+/* Word cards */
+@import './css/word-card.css';

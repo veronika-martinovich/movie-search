@@ -1,7 +1,7 @@
 .category-card {
   width: 300px;
   padding-bottom: 30px;
-  box-shadow: 0px 0px 3px #979595;
+  box-shadow: 0px 0px 5px #c7c6c6;
   font-size: 1.6rem;
   border-radius: 4px;
   color: #ffffff;
@@ -19,24 +19,28 @@
 }
 
 .category-card_train {
-  border: 1.5px solid rgb(243, 229, 37);
+  border: 2px solid rgb(194, 224, 85);
+  background-color: rgba(205, 243, 37, 0.164);
 }
 
 .category-card_play {
-  border: 1.5px solid rgb(64, 125, 187);
+  border: 2px solid rgb(168, 147, 224);
+  background-color: rgba(150, 114, 248, 0.068);
 }
+
 .category-card__header {
-  padding-top: 5px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 60px;
 }
 
 .category-card__header_train {
-  background-color: rgb(243, 229, 37);
+  background-color: rgb(203, 241, 62);
 }
 
 .category-card__header_play {
-  background-color: rgb(64, 125, 187);
+  background-color: rgb(160, 128, 248);
 }
 
 .category-car__title {

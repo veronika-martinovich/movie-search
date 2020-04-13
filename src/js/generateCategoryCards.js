@@ -1,18 +1,18 @@
-import { categories } from "./data";
 import { CategoryCard } from "./CategoryCard";
+import { state } from "./state";
 
 const categoryCards = [];
-function createCategoryCards() {
+function generateCategoryCards(categories) {
   const cardsLayout = document.querySelector(".cards-layout");
   categories.forEach((category) => {
     const categoryCard = new CategoryCard(
       category.title,
       category.iconTitle,
-      "Train"
+      state.mode
     );
     categoryCards.push(categoryCard);
-    cardsLayout.append(categoryCard.generateCategoryCard());
+    cardsLayout.append(categoryCard.createCategoryCard());
   });
 }
 
-export { categoryCards, createCategoryCards };
+export { categoryCards, generateCategoryCards };

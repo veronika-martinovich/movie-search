@@ -1,8 +1,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 120px;
-  height: 45px;
+  width: 140px;
+  height: 46px;
 }
 
 .switch input {
@@ -19,12 +19,13 @@
   right: 0;
   bottom: 0;
   border-radius: 30px;
-  background-color: rgb(243, 229, 37);
+  background-color: rgb(203, 241, 62);
   color: #ffffff;
   font-size: 1.7rem;
-  font-weight: 700;
+  font-weight: 600;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 2px;
   text-align: start;
   transition: 0.4s;
 }
@@ -35,17 +36,17 @@
   width: 35px;
   height: 35px;
   right: 9px;
-  bottom: 5px;
+  bottom: 6px;
   border-radius: 50%;
   background-color: #ffffff;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: rgb(64, 125, 187);
+  background-color: rgb(160, 128, 248);
   text-align: end;
 }
 
 input:checked + .slider:before {
-  transform: translateX(-67px);
+  transform: translateX(-87px);
 }

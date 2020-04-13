@@ -1,5 +1,6 @@
 import { MODE1, MODE2, state } from "./state";
-import { categoryCards } from "./createCategoryCards";
+import { categoryCards } from "./generateCategoryCards";
+import { generatePage } from "./generatePage";
 
 let hamburgerIcon = document.querySelector('.hamburger');
 let nav = document.querySelector('.nav');
@@ -31,5 +32,8 @@ navList.addEventListener('click', function(e) {
       link.classList.remove('nav__link_active');
     })
     e.target.classList.add('nav__link_active');
+    hamburgerIcon.classList.toggle('hamburger_arrow');
+    nav.classList.toggle('nav_active');
+    generatePage(state.page);
   }
 })

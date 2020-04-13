@@ -9,21 +9,11 @@ export class CategoryCard {
     this.cardIcon = '';
   }
 
-  generateCategoryCard() {
+  createCategoryCard() {
     this.categoryCard = document.createElement('div');
     this.categoryCard.className = "category-card";
-    if (this.mode === 'Train') {
-      this.categoryCard.classList.add('category-card_train');
-    } else {
-      this.categoryCard.classList.add('category-card_play');
-    }
     this.cardHeader = document.createElement('div');
     this.cardHeader.className = "category-card__header";
-    if (this.mode === 'Train') {
-      this.cardHeader.classList.add('category-card__header_train');
-    } else {
-      this.cardHeader.classList.add('category-card__header_play');
-    }
     this.cardTitle = document.createElement('h4');
     this.cardTitle.className = "category-card__title";
     this.cardTitle.textContent = this.title;
@@ -31,6 +21,13 @@ export class CategoryCard {
     this.cardIcon = document.createElement('span');
     this.cardIcon.className = `category-card__icon ico ico_${this.iconTitle}`;
     this.categoryCard.append(this.cardHeader, this.cardIcon);
+    if (this.mode === 'Train') {
+      this.categoryCard.classList.add('category-card_train');
+      this.cardHeader.classList.add('category-card__header_train');
+    } else {
+      this.categoryCard.classList.add('category-card_play');
+      this.cardHeader.classList.add('category-card__header_play');
+    }
     return this.categoryCard;
   }
 
