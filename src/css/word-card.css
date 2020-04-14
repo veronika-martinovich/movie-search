@@ -3,11 +3,33 @@
   height: 220px;
   box-shadow: 0px 0px 5px #c7c6c6;
   font-size: 1.6rem;
+  color: rgb(65, 53, 70);
   text-align: center;
   border-radius: 4px;
   margin-bottom: 50px;
-  cursor: pointer;
-  transition: 0.3s;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.word-card_train::before {
+  content: '♫';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: rgb(203, 241, 62);
+  z-index: 1;
+} 
+
+.word-card_flipped {
+  transform: rotateY(180deg);
+}
+
+.word-card_flipped::before {
+  content: '';
 }
 
 .word-card_train {
@@ -16,6 +38,39 @@
 
 .word-card_play {
   border: 3px solid rgb(168, 147, 224);
+}
+
+.word-card__front,
+.word-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.word-card__back {
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.word-card__translation-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url('../img/other/idea.png');
+  background-size: cover;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.word-card__translation-icon_play {
+  display: none;
+}
+
+.word-card__translation-icon_train {
+  display: inline-block;
 }
 
 .word-card__img {
@@ -42,4 +97,5 @@
 
 .word-card__text_train {
   display: inline-block;
+  width: 87%;
 }

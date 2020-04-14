@@ -1,32 +1,30 @@
 import { categories, words } from "./data";
-import { generateCategoryCards } from "./generateCategoryCards";
-import { generateWordCards } from "./generateWordCards";
+import { generateCategoryCardsPage } from "./generateCategoryCardsPage";
+import { generateWordCardsPage } from "./generateWordCardsPage";
 import { state } from "./state";
 
 export function generatePage(page) {
-  const cardsLayout = document.querySelector(".cards-layout");
-  cardsLayout.innerHTML = '';
   switch (page) {
     case "all_categories":
-      generateCategoryCards(categories);
+      generateCategoryCardsPage(categories);
       break;
     case "actions_1":
-      generateWordCards(words[0]);
+      generateWordCardsPage(words[0]);
       break;
     case "actions_2":
-      generateWordCards(words[1]);
+      generateWordCardsPage(words[1]);
       break;
     case "animals_1":
-      generateWordCards(words[2]);
+      generateWordCardsPage(words[2]);
       break;
     case "animals_2":
-      generateWordCards(words[3]);
+      generateWordCardsPage(words[3]);
       break;
     case "clothes":
-      generateWordCards(words[4]);
+      generateWordCardsPage(words[4]);
       break;
     case "emotions":
-      generateWordCards(words[5]);
+      generateWordCardsPage(words[5]);
       break;
   }
 }

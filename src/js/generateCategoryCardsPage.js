@@ -2,8 +2,9 @@ import { CategoryCard } from "./CategoryCard";
 import { state } from "./state";
 
 const categoryCards = [];
-function generateCategoryCards(categories) {
+function generateCategoryCardsPage(categories) {
   const cardsLayout = document.querySelector(".cards-layout");
+  cardsLayout.innerHTML = "";
   categories.forEach((category) => {
     const categoryCard = new CategoryCard(
       category.title,
@@ -15,4 +16,4 @@ function generateCategoryCards(categories) {
   });
 }
 
-export { categoryCards, generateCategoryCards };
+export { categoryCards, generateCategoryCardsPage };
