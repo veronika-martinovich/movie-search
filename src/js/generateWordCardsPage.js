@@ -2,6 +2,7 @@ import { WordCard } from "./WordCard";
 import { state, MODE1, MODE2 } from "./state";
 import { createPageHeading } from "./createPageHeading";
 import { addWordCardHandlers } from "./addWordCardHandlers";
+import {addPlayButton} from "./addPlayButton";
 
 let wordCards = [];
 function generateWordCardsPage(words) {
@@ -26,10 +27,7 @@ function generateWordCardsPage(words) {
   state.activeWordCards = wordCards;
 
   if (state.mode === MODE2) {
-    const playButton = document.createElement("button");
-    playButton.classList.add("button_play");
-    playButton.textContent = state.isPlayOn ? "RESTART" : "START";
-    wrapper.append(playButton);
+    wrapper.append(addPlayButton());
   }
 
   const audio = document.createElement("audio");

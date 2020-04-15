@@ -4,5 +4,5 @@ export const state = {
   mode: MODE1,
   page: "all_categories",
   activeWordCards: "",
-  isPlayOn: true
+  isPlayOn: false
 };

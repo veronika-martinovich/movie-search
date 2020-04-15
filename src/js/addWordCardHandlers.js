@@ -14,6 +14,7 @@ export function addWordCardHandlers(cardsLayout, audio) {
         audioWord = e.target.parentElement.parentElement.dataset.word;
       }
       audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
+      
       if (e.target.classList.contains("word-card__translation-icon")) {
         e.target.parentElement.parentElement.classList.add("word-card_flipped");
       }

@@ -1,5 +1,4 @@
-import { MODE1, MODE2, state } from "./state";
-import { categoryCards } from "./generateCategoryCardsPage";
+import { state, MODE1, MODE2 } from "./state";
 import { generatePage } from "./generatePage";
 import { changeNavLinksStyles } from "./changeNavLinksStyles";
 
@@ -18,6 +17,7 @@ hamburgerIcon.addEventListener("click", function () {
 // Toggle switch
 switchCheckbox.addEventListener("click", function () {
   state.mode = state.mode === MODE1 ? MODE2 : MODE1;
+  state.isPlayOn = state.isPlayOn ? !state.isPlayOn : state.isPlayOn;
   switchSlider.textContent = state.mode;
   generatePage(state.page);
 });
