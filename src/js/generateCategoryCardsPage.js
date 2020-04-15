@@ -1,8 +1,7 @@
 import { CategoryCard } from "./CategoryCard";
 import { state } from "./state";
 import { createPageHeading } from "./createPageHeading";
-import { changeNavLinksStyles } from "./changeNavLinksStyles";
-import { generatePage } from "./generatePage";
+import { addCategoryCardHandlers } from "./addCategoryCardHandlers";
 
 const categoryCards = [];
 function generateCategoryCardsPage(categories) {
@@ -26,27 +25,7 @@ function generateCategoryCardsPage(categories) {
 
   wrapper.append(cardsLayout);
 
-  // Category cards handlers
-  cardsLayout.addEventListener("click", function (e) {
-    if (e.target.classList.contains("category-card")) {
-      state.page = e.target.dataset.category;
-      changeNavLinksStyles(
-        Array.from(navLinks).find((item) => {
-          return item.dataset.category === state.page;
-        })
-      );
-      generatePage(state.page);
-    }
-    if (e.target.classList.contains("category-card__icon")) {
-      state.page = e.target.classList[e.target.classList.length - 1].slice(4);
-      changeNavLinksStyles(
-        Array.from(navLinks).find((item) => {
-          return item.dataset.category === state.page;
-        })
-      );
-      generatePage(state.page);
-    }
-  });
+  addCategoryCardHandlers(cardsLayout, navLinks);
 }
 
 export { categoryCards, generateCategoryCardsPage };
