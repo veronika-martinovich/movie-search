@@ -1,15 +1,15 @@
 import { WordCard } from "./WordCard";
-import { state, MODE1 } from "./state";
+import { state, MODE1, MODE2 } from "./state";
 import { createPageHeading } from "./createPageHeading";
 
 let wordCards = [];
 function generateWordCardsPage(words) {
   const wrapper = document.querySelector(".wrapper");
-  wrapper.innerHTML = '';
+  wrapper.innerHTML = "";
   createPageHeading(state.page);
   wordCards = [];
-  
-  const cardsLayout = document.createElement('div');
+
+  const cardsLayout = document.createElement("div");
   cardsLayout.classList.add("cards-layout");
 
   words.forEach((word) => {
@@ -25,13 +25,20 @@ function generateWordCardsPage(words) {
   });
   state.activeWordCards = wordCards;
 
+  if (state.mode === MODE2) {
+    const playButton = document.createElement("button");
+    playButton.classList.add("button_play");
+    playButton.textContent = state.isPlayOn ? "RESTART" : "START";
+    wrapper.append(playButton);
+  }
+
   const audio = document.createElement("audio");
   audio.classList.add("audio");
   audio.setAttribute("autoplay", true);
 
   wrapper.append(cardsLayout, audio);
 
-  // Word cards
+  // Word cards handlers
   cardsLayout.addEventListener("click", function (e) {
     if (state.page !== "all_categories" && state.mode === MODE1) {
       let audioWord = "";

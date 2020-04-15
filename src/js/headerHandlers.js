@@ -8,8 +8,6 @@ const nav = document.querySelector(".nav");
 const switchCheckbox = document.querySelector(".switch input");
 const switchSlider = document.querySelector(".slider");
 const navList = document.querySelector(".nav__list");
-const navLinks = document.querySelectorAll(".nav__link");
-const cardsLayout = document.querySelector(".cards-layout");
 
 // Hamburger
 hamburgerIcon.addEventListener("click", function () {
@@ -21,16 +19,7 @@ hamburgerIcon.addEventListener("click", function () {
 switchCheckbox.addEventListener("click", function () {
   state.mode = state.mode === MODE1 ? MODE2 : MODE1;
   switchSlider.textContent = state.mode;
-  if (state.page === "all_categories") {
-    categoryCards.forEach((item) => {
-      item.changeCategoryCardMode(state.mode);
-    });
-  }
-  if (state.page !== "all_categories") {
-    state.activeWordCards.forEach((item) => {
-      item.changeWordCardMode(state.mode);
-    });
-  }
+  generatePage(state.page);
 });
 
 // Navigation links

@@ -16,6 +16,7 @@ body {
   color: rgb(134, 110, 145);
   font-weight: 600;
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .cards-layout {

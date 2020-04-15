@@ -31,12 +31,4 @@ export class CategoryCard {
     }
     return this.categoryCard;
   }
-
-  changeCategoryCardMode(mode) {
-    this.mode = mode;
-    this.categoryCard.classList.toggle("category-card_train");
-    this.categoryCard.classList.toggle("category-card_play");
-    this.cardHeader.classList.toggle("category-card__header_train");
-    this.cardHeader.classList.toggle("category-card__header_play");
-  }
 }

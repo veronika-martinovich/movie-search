@@ -26,7 +26,7 @@ function generateCategoryCardsPage(categories) {
 
   wrapper.append(cardsLayout);
 
-  // Category cards
+  // Category cards handlers
   cardsLayout.addEventListener("click", function (e) {
     if (e.target.classList.contains("category-card")) {
       state.page = e.target.dataset.category;

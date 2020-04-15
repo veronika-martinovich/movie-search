@@ -63,20 +63,4 @@ export class WordCard {
     }
     return this.wordCard;
   }
-
-  changeWordCardMode(mode) {
-    this.mode = mode;
-    this.wordCard.classList.toggle("word-card_train");
-    this.wordCard.classList.toggle("word-card_play");
-    this.cardImage.classList.toggle("word-card__img_train");
-    this.cardImage.classList.toggle("word-card__img_play");
-    this.cardText.classList.toggle("word-card__text_train");
-    this.cardText.classList.toggle("word-card__text_play");
-    this.cardTranslationIcon.classList.toggle(
-      "word-card__translation-icon_train"
-    );
-    this.cardTranslationIcon.classList.toggle(
-      "word-card__translation-icon_play"
-    );
-  }
 }
