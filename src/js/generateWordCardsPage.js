@@ -1,11 +1,17 @@
 import { WordCard } from "./WordCard";
-import { state } from "./state";
+import { state, MODE1 } from "./state";
+import { createPageHeading } from "./createPageHeading";
 
 let wordCards = [];
 function generateWordCardsPage(words) {
+  const wrapper = document.querySelector(".wrapper");
+  wrapper.innerHTML = '';
+  createPageHeading(state.page);
   wordCards = [];
-  const cardsLayout = document.querySelector(".cards-layout");
-  cardsLayout.innerHTML = "";
+  
+  const cardsLayout = document.createElement('div');
+  cardsLayout.classList.add("cards-layout");
+
   words.forEach((word) => {
     const wordCard = new WordCard(
       word.word,
@@ -19,12 +25,37 @@ function generateWordCardsPage(words) {
   });
   state.activeWordCards = wordCards;
 
-  if (!document.querySelector(".audio")) {
-    const audio = document.createElement("audio");
-    audio.classList.add("audio");
-    audio.setAttribute("autoplay", true);
-    cardsLayout.after(audio);
-  }
+  const audio = document.createElement("audio");
+  audio.classList.add("audio");
+  audio.setAttribute("autoplay", true);
+
+  wrapper.append(cardsLayout, audio);
+
+  // Word cards
+  cardsLayout.addEventListener("click", function (e) {
+    if (state.page !== "all_categories" && state.mode === MODE1) {
+      let audioWord = "";
+      if (e.target.classList.contains("word-card")) {
+        audioWord = e.target.dataset.word;
+      }
+      if (e.target.classList.contains("word-card__img")) {
+        audioWord = e.target.parentElement.parentElement.dataset.word;
+      }
+      if (e.target.classList.contains("word-card__text")) {
+        audioWord = e.target.parentElement.parentElement.dataset.word;
+      }
+      audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
+      if (e.target.classList.contains("word-card__translation-icon")) {
+        e.target.parentElement.parentElement.classList.add("word-card_flipped");
+      }
+    }
+  });
+
+  cardsLayout.addEventListener("mouseout", function (e) {
+    if (e.target.classList.contains("word-card")) {
+      e.target.classList.remove("word-card_flipped");
+    }
+  });
 }
 
 export { wordCards, generateWordCardsPage };

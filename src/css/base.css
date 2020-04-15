@@ -19,13 +19,10 @@ body {
 }
 
 .cards-layout {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.layout-3-column {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

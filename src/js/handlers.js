@@ -1,7 +1,6 @@
 import { MODE1, MODE2, state } from "./state";
 import { categoryCards } from "./generateCategoryCardsPage";
 import { generatePage } from "./generatePage";
-import { changePageHeading } from "./changePageHeading";
 import { changeNavLinksStyles } from "./changeNavLinksStyles";
 
 const hamburgerIcon = document.querySelector(".hamburger");
@@ -41,58 +40,6 @@ navList.addEventListener("click", function (e) {
     changeNavLinksStyles(e.target);
     hamburgerIcon.classList.toggle("hamburger_arrow");
     nav.classList.toggle("nav_active");
-    changePageHeading(e.target.dataset.category);
     generatePage(state.page);
-  }
-});
-
-// Category cards
-cardsLayout.addEventListener("click", function (e) {
-  if (e.target.classList.contains("category-card")) {
-    state.page = e.target.dataset.category;
-    changeNavLinksStyles(
-      Array.from(navLinks).find((item) => {
-        return item.dataset.category === state.page;
-      })
-    );
-    changePageHeading(state.page);
-    generatePage(state.page);
-  }
-  if (e.target.classList.contains("category-card__icon")) {
-    state.page = e.target.classList[e.target.classList.length - 1].slice(4);
-    changeNavLinksStyles(
-      Array.from(navLinks).find((item) => {
-        return item.dataset.category === state.page;
-      })
-    );
-    changePageHeading(state.page);
-    generatePage(state.page);
-  }
-});
-
-// Word cards
-cardsLayout.addEventListener("click", function (e) {
-  if (state.page !== "all_categories" && state.mode === MODE1) {
-    const audio = document.querySelector(".audio");
-    let audioWord = "";
-    if (e.target.classList.contains("word-card")) {
-      audioWord = e.target.dataset.word;
-    }
-    if (e.target.classList.contains("word-card__img")) {
-      audioWord = e.target.parentElement.parentElement.dataset.word;
-    }
-    if (e.target.classList.contains("word-card__text")) {
-      audioWord = e.target.parentElement.parentElement.dataset.word;
-    }
-    audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
-    if (e.target.classList.contains("word-card__translation-icon")) {
-      e.target.parentElement.parentElement.classList.add("word-card_flipped");
-    }
-  }
-});
-
-cardsLayout.addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("word-card")) {
-    e.target.classList.remove("word-card_flipped");
   }
 });

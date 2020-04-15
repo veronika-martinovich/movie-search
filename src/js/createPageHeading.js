@@ -1,7 +1,9 @@
 import { categories } from "./data";
 
-export function changePageHeading(category) {
-  const pageHeading = document.querySelector(".page-heading");
+export function createPageHeading(category) {
+  const wrapper = document.querySelector(".wrapper");
+  const pageHeading = document.createElement("h3");
+  pageHeading.classList.add("page-heading");
   if (category === "all_categories") {
     pageHeading.textContent = "All categories";
   } else {
@@ -9,4 +11,5 @@ export function changePageHeading(category) {
       return item.name === category;
     }).title;
   }
+  wrapper.append(pageHeading);
 }
