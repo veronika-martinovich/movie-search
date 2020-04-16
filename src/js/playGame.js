@@ -1,6 +1,7 @@
 import { state, MODE1, MODE2 } from "./state";
 import { shuffleActiveWordCards } from "./shuffleActiveWordCards";
 import { addStarIcon } from "./addStarIcon";
+import { ResultModal } from "./ResultModal";
 
 export function playGame() {
   state.isPlayOn = !state.isPlayOn;
@@ -10,7 +11,7 @@ export function playGame() {
   let counterSuccess = 0;
   let counterFailure = 0;
   console.log(state, audio);
-  setTimeout(playAudio, 1500);
+  setTimeout(playAudio, 1000);
 
   function playAudio() {
     if (shuffledWordCards.length > 0) {
@@ -21,9 +22,15 @@ export function playGame() {
       state.activeAudio = shuffledWordCards[shuffledWordCards.length - 1].audio;
       cardsLayout.addEventListener("click", cardClickHandler);
     } else {
+      if (counterFailure) {
+        audio.setAttribute("src", "./src/audio/game_sounds/failure.mp3");
+      } else {
+        audio.setAttribute("src", "./src/audio/game_sounds/success.mp3");
+      }
       state.isPlayOn = !state.isPlayOn;
-
-      console.log("game over", counterSuccess, counterFailure, state.isPlayOn);
+      document.body.prepend(
+        new ResultModal(counterSuccess, counterFailure).createResultModal()
+      );
     }
   }
 
@@ -37,7 +44,7 @@ export function playGame() {
       e.target.classList.add("word-card__img_disabled");
       addStarIcon("success");
       shuffledWordCards.pop();
-      setTimeout(playAudio, 1500);
+      setTimeout(playAudio, 1000);
     } else if (!e.target.classList.contains("cards-layout")) {
       counterFailure++;
       audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");

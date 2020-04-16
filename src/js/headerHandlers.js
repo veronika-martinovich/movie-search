@@ -7,6 +7,8 @@ const nav = document.querySelector(".nav");
 const switchCheckbox = document.querySelector(".switch input");
 const switchSlider = document.querySelector(".slider");
 const navList = document.querySelector(".nav__list");
+const wrapper = document.querySelector(".wrapper");
+const header = document.querySelector(".header");
 
 // Hamburger
 hamburgerIcon.addEventListener("click", function () {

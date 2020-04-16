@@ -1,0 +1,57 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.5);
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.result-modal {
+  width: 350px;
+  border: 2px solid rgb(168, 147, 224);
+  background-color: rgb(251, 249, 255);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.8rem;
+  z-index: 4;
+  animation: appear 0.3s forwards;  
+}
+
+@keyframes appear {
+  from {
+    width: 350px;
+  }
+
+  to {
+    transform: scale(1.1)
+  }
+}
+
+.result-modal__icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.result-modal__icon_success {
+  background-image: url("../img/other/result_success.png");
+}
+
+.result-modal__icon_failure {
+  background-image: url("../img/other/result_failure.png");
+}
+
+.result-modal__text {
+  width: 330px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
