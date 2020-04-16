@@ -1,11 +1,9 @@
-import { state, MODE1, MODE2 } from "./state";
-import {addRestartButton} from "./addRestartButton";
+import { addRestartButton } from "./addRestartButton";
+import { playGame } from "./playGame";
 
-export function addPlayButtonHandler(playButton, parentNode) {
-  playButton.addEventListener('click', function() {
+export function addPlayButtonHandler(playButton) {
+  playButton.addEventListener("click", function () {
     this.replaceWith(addRestartButton());
-    addRestartButton();
-    state.isPlayOn = !state.isPlayOn;
-    console.log(state)
-  })
+    playGame();
+  });
 }
