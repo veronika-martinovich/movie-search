@@ -8,8 +8,8 @@ export function playGame() {
   const cardsLayout = document.querySelector(".cards-layout");
   let counterSuccess = 0;
   let counterFailure = 0;
-
-  playAudio();
+  console.log(state, audio)
+  setTimeout(playAudio, 1500);
 
   function playAudio() {
     if (shuffledWordCards.length > 0) {
@@ -17,18 +17,28 @@ export function playGame() {
         "src",
         shuffledWordCards[shuffledWordCards.length - 1].audio
       );
+      state.activeAudio = shuffledWordCards[shuffledWordCards.length - 1].audio;
       cardsLayout.addEventListener("click", cardClickHandler);
     } else {
-      console.log("game over", counterSuccess, counterFailure);
+      state.isPlayOn = !state.isPlayOn;
+      
+      console.log("game over", counterSuccess, counterFailure, state.isPlayOn);
     }
   }
 
   function cardClickHandler(e) {
-    e.target.parentElement.parentElement.dataset.word ===
-    shuffledWordCards[shuffledWordCards.length - 1].word
-      ? counterSuccess++
-      : counterFailure++;
-    shuffledWordCards.pop();
-    playAudio();
+    if (
+      e.target.parentElement.parentElement.dataset.word ===
+      shuffledWordCards[shuffledWordCards.length - 1].word
+    ) {
+      counterSuccess++;
+      audio.setAttribute("src", "./src/audio/game_sounds/correct.mp3");
+      e.target.classList.add("word-card__img_disabled");
+      shuffledWordCards.pop();
+      setTimeout(playAudio, 1500);
+    } else {
+      counterFailure++;
+      audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");
+    }
   }
 }

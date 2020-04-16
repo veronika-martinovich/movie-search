@@ -11,6 +11,9 @@
 /* Category cards */
 @import './css/category-card.css';
 
+/* Play mode elements */
+@import './css/progress-container.css';
+@import './css/buttons.css';
+
 /* Word cards */
 @import './css/word-card.css';
-@import './css/buttons.css';
