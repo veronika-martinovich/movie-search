@@ -1,5 +1,6 @@
 import { state, MODE1, MODE2 } from "./state";
 import { shuffleActiveWordCards } from "./shuffleActiveWordCards";
+import { addStarIcon } from "./addStarIcon";
 
 export function playGame() {
   state.isPlayOn = !state.isPlayOn;
@@ -8,7 +9,7 @@ export function playGame() {
   const cardsLayout = document.querySelector(".cards-layout");
   let counterSuccess = 0;
   let counterFailure = 0;
-  console.log(state, audio)
+  console.log(state, audio);
   setTimeout(playAudio, 1500);
 
   function playAudio() {
@@ -21,7 +22,7 @@ export function playGame() {
       cardsLayout.addEventListener("click", cardClickHandler);
     } else {
       state.isPlayOn = !state.isPlayOn;
-      
+
       console.log("game over", counterSuccess, counterFailure, state.isPlayOn);
     }
   }
@@ -34,11 +35,13 @@ export function playGame() {
       counterSuccess++;
       audio.setAttribute("src", "./src/audio/game_sounds/correct.mp3");
       e.target.classList.add("word-card__img_disabled");
+      addStarIcon("success");
       shuffledWordCards.pop();
       setTimeout(playAudio, 1500);
-    } else {
+    } else if (!e.target.classList.contains("cards-layout")) {
       counterFailure++;
       audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");
+      addStarIcon("failure");
     }
   }
 }

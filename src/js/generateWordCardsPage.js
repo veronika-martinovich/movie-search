@@ -3,6 +3,7 @@ import { state, MODE1, MODE2 } from "./state";
 import { createPageHeading } from "./createPageHeading";
 import { addWordCardHandlers } from "./addWordCardHandlers";
 import {addStartButton} from "./addStartButton";
+import {addStarContainer} from "./addStarContainer";
 
 let wordCards = [];
 function generateWordCardsPage(words) {
@@ -27,10 +28,11 @@ function generateWordCardsPage(words) {
   state.activeWordCards = wordCards;
 
   if (state.mode === MODE2) {
-    const progressContainer = document.createElement("div");
-    progressContainer.classList.add("progress-container");
-    progressContainer.append(addStartButton());
-    wrapper.prepend(progressContainer);
+    const gamePanel = document.createElement("div");
+    gamePanel.classList.add("game-panel");
+    gamePanel.append(addStarContainer());
+    gamePanel.append(addStartButton());
+    wrapper.prepend(gamePanel);
   }
 
   const audio = document.createElement("audio");

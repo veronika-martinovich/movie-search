@@ -1,0 +1,29 @@
+.game-panel {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.game-panel__star-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon_star {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.icon_star-success {
+  background-image: url("../img/other/star_success.png");
+}
+
+.icon_star-failure {
+  background-image: url("../img/other/star_failure.png");
+}
