@@ -34,3 +34,18 @@ navList.addEventListener("click", function (e) {
     generatePage(state.page);
   }
 });
+
+// Nav
+wrapper.addEventListener('click', function() {
+  if (nav.classList.contains("nav_active")) {
+    hamburgerIcon.classList.remove("hamburger_arrow");
+    nav.classList.remove("nav_active");
+  }
+})
+
+header.addEventListener('click', function(e) {
+  if (!e.target.classList.contains("hamburger") && nav.classList.contains("nav_active")) {
+    hamburgerIcon.classList.remove("hamburger_arrow");
+    nav.classList.remove("nav_active");
+  }
+})
