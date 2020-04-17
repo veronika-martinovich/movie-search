@@ -18,11 +18,41 @@ body {
 }
 
 .cards-layout {
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+  .cards-layout {
+    max-width: 1020px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .cards-layout {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards-layout {
+    max-width: 480px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cards-layout {
+    max-width: 375px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .cards-layout {
+    max-width: 320px;
+  }
 }

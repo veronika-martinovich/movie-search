@@ -7,8 +7,6 @@ const nav = document.querySelector(".nav");
 const switchCheckbox = document.querySelector(".switch input");
 const switchSlider = document.querySelector(".slider");
 const navList = document.querySelector(".nav__list");
-const wrapper = document.querySelector(".wrapper");
-const header = document.querySelector(".header");
 
 // Hamburger
 hamburgerIcon.addEventListener("click", function () {
@@ -39,6 +37,7 @@ navList.addEventListener("click", function (e) {
 document.body.addEventListener("click", function (e) {
   if (
     !e.target.classList.contains("hamburger") &&
+    !e.target.classList.contains("hamburger__line") &&
     !e.target.classList.contains("nav") &&
     !e.target.classList.contains("nav__list") &&
     nav.classList.contains("nav_active")

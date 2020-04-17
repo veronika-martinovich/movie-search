@@ -2,6 +2,7 @@ import { state, MODE1, MODE2 } from "../state";
 
 export function addWordCardHandlers(cardsLayout, audio) {
   cardsLayout.addEventListener("click", function (e) {
+    console.log(e.target);
     if (state.page !== "all_categories" && state.mode === MODE1) {
       let audioWord = "";
       if (e.target.classList.contains("word-card")) {

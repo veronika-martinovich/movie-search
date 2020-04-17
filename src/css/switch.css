@@ -52,3 +52,21 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(-88px);
 }
+
+@media screen and (max-width: 768px) {
+  .switch {
+    width: 115px;
+  }
+
+  .slider {
+    font-size: 1.3rem;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 5px;
+  }
+
+  
+  input:checked + .slider:before {
+    transform: translateX(-64px);
+  }
+}

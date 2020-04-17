@@ -22,3 +22,33 @@
   font-weight: 700;
   font-size: 2.2rem;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .header::before {
+    width: 115px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header::before {
+    width: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+}

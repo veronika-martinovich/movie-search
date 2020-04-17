@@ -27,11 +27,11 @@
 
 @keyframes appear {
   from {
-    width: 350px;
+    transform: scale(1);
   }
 
   to {
-    transform: scale(1.1)
+    transform: scale(1.1);
   }
 }
 
@@ -50,8 +50,21 @@
 }
 
 .result-modal__text {
-  width: 330px;
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+@media screen and (max-width: 480px) {
+  .result-modal {
+    width: 290px;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .result-modal {
+    width: 230px;
+    font-size: 1.2rem;
+  }
 }

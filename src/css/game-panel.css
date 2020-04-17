@@ -27,3 +27,17 @@
 .icon_star-failure {
   background-image: url("../img/other/star_failure.png");
 }
+
+@media screen and (max-width: 768px) {
+  .game-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -42,3 +42,22 @@
 .nav__link_active {
   font-weight: 700;
 }
+
+.nav__logo {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    padding-top: 75px;
+    padding-left: 48px;
+  }
+
+  .nav__logo {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+}
