@@ -1,20 +1,44 @@
 .button {
   display: block;
-  height: 50px;
+  height: 45px;
+  min-width: 120px;
   padding-left: 15px;
   padding-right: 15px;
   background-color: #ffffff;
-  border: 3px solid rgb(144, 128, 151);
-  border-radius: 10px;
+  border: 1.5px solid rgb(144, 128, 151);
+  border-radius: 12px;
   color: rgb(134, 110, 145);
-  text-transform: uppercase;
   font-size: 1.3rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0px 0px 5px #c7c6c6;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: rgb(160, 128, 248);
+  border-color: rgb(168, 147, 224);
+  color: #ffffff;
 }
 
 .button_repeat::after {
-  content: '\2B6F';
+  content: '♫';
   margin-left: 10px;
+}
+
+.button_start {
+  animation-name: scale-button;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes scale-button {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }

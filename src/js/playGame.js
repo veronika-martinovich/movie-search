@@ -11,7 +11,7 @@ export function playGame() {
   let counterSuccess = 0;
   let counterFailure = 0;
   console.log(state, audio);
-  setTimeout(playAudio, 1000);
+  setTimeout(playAudio, 800);
 
   function playAudio() {
     if (shuffledWordCards.length > 0) {
@@ -44,7 +44,7 @@ export function playGame() {
       e.target.classList.add("word-card__img_disabled");
       addStarIcon("success");
       shuffledWordCards.pop();
-      setTimeout(playAudio, 1000);
+      setTimeout(playAudio, 800);
     } else if (!e.target.classList.contains("cards-layout")) {
       counterFailure++;
       audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");

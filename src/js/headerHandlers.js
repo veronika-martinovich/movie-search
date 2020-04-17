@@ -36,16 +36,14 @@ navList.addEventListener("click", function (e) {
 });
 
 // Nav
-wrapper.addEventListener('click', function() {
-  if (nav.classList.contains("nav_active")) {
+document.body.addEventListener("click", function (e) {
+  if (
+    !e.target.classList.contains("hamburger") &&
+    !e.target.classList.contains("nav") &&
+    !e.target.classList.contains("nav__list") &&
+    nav.classList.contains("nav_active")
+  ) {
     hamburgerIcon.classList.remove("hamburger_arrow");
     nav.classList.remove("nav_active");
   }
-})
-
-header.addEventListener('click', function(e) {
-  if (!e.target.classList.contains("hamburger") && nav.classList.contains("nav_active")) {
-    hamburgerIcon.classList.remove("hamburger_arrow");
-    nav.classList.remove("nav_active");
-  }
-})
+});
