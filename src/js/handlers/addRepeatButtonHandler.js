@@ -1,4 +1,4 @@
-import { state } from "./state";
+import { state } from "../state";
 
 export function addRepeatButtonHandler(repeatButton) {
   repeatButton.addEventListener("click", function () {

@@ -1,6 +1,6 @@
-import { changeNavLinksStyles } from "./changeNavLinksStyles";
-import { generatePage } from "./generatePage";
-import { state, MODE1, MODE2 } from "./state";
+import { changeNavLinksStyles } from "../styles_functions/changeNavLinksStyles";
+import { generatePage } from "../pages_functions/generatePage";
+import { state, MODE1, MODE2 } from "../state";
 
 export function addCategoryCardHandlers(cardsLayout, navLinks) {
   cardsLayout.addEventListener("click", function (e) {

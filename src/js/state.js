@@ -5,5 +5,5 @@ export const state = {
   page: "all_categories",
   activeWordCards: "",
   isPlayOn: false,
-  activeAudio: ''
+  activeAudio: "",
 };

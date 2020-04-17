@@ -1,6 +1,6 @@
-import { categories } from "./data";
+import { categories } from "../data";
 
-export function createPageHeading(category) {
+export function addPageHeading(category) {
   const wrapper = document.querySelector(".wrapper");
   const pageHeading = document.createElement("h3");
   pageHeading.classList.add("page-heading");

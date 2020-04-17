@@ -60,7 +60,7 @@
 .word-card__translation-icon {
   width: 28px;
   height: 28px;
-  background-image: url('../img/other/unnamed.png');
+  background-image: url('../img/other/help.png');
   background-size: cover;
   margin-top: 6px;
   cursor: pointer;

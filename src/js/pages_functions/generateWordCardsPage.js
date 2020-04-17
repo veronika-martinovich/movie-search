@@ -1,15 +1,15 @@
-import { WordCard } from "./WordCard";
-import { state, MODE1, MODE2 } from "./state";
-import { createPageHeading } from "./createPageHeading";
-import { addWordCardHandlers } from "./addWordCardHandlers";
-import {addStartButton} from "./addStartButton";
-import {addStarContainer} from "./addStarContainer";
+import { WordCard } from "../classes/WordCard";
+import { state, MODE1, MODE2 } from "../state";
+import { addPageHeading } from "../elements/addPageHeading";
+import { addWordCardHandlers } from "../handlers/addWordCardHandlers";
+import { addStartButton } from "../elements/addStartButton";
+import { addStarContainer } from "../elements/addStarContainer";
 
 let wordCards = [];
 function generateWordCardsPage(words) {
   const wrapper = document.querySelector(".wrapper");
   wrapper.innerHTML = "";
-  createPageHeading(state.page);
+  addPageHeading(state.page);
   wordCards = [];
   const cardsLayout = document.createElement("div");
   cardsLayout.classList.add("cards-layout");
@@ -39,7 +39,7 @@ function generateWordCardsPage(words) {
   audio.classList.add("audio");
   audio.setAttribute("autoplay", true);
 
-  wrapper.append(cardsLayout, audio);  
+  wrapper.append(cardsLayout, audio);
 
   addWordCardHandlers(cardsLayout, audio);
 }

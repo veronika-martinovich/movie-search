@@ -1,6 +1,6 @@
-import { generatePage } from "./generatePage";
-import { state } from "./state";
-import { changeNavLinksStyles } from "./changeNavLinksStyles";
+import { generatePage } from "../pages_functions/generatePage";
+import { state } from "../state";
+import { changeNavLinksStyles } from "../styles_functions/changeNavLinksStyles";
 
 export class ResultModal {
   constructor(counterSuccess, counterFailure) {

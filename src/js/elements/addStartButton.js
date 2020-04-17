@@ -1,4 +1,4 @@
-import {addStartButtonHandler} from "./addStartButtonHandler";
+import { addStartButtonHandler } from "../handlers/addStartButtonHandler";
 
 export function addStartButton() {
   const startButton = document.createElement("button");

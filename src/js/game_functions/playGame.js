@@ -1,7 +1,7 @@
-import { state, MODE1, MODE2 } from "./state";
+import { state, MODE1, MODE2 } from "../state";
 import { shuffleActiveWordCards } from "./shuffleActiveWordCards";
-import { addStarIcon } from "./addStarIcon";
-import { ResultModal } from "./ResultModal";
+import { addStarIcon } from "../elements/addStarIcon";
+import { ResultModal } from "../classes/ResultModal";
 
 export function playGame() {
   state.isPlayOn = !state.isPlayOn;
@@ -10,7 +10,6 @@ export function playGame() {
   const cardsLayout = document.querySelector(".cards-layout");
   let counterSuccess = 0;
   let counterFailure = 0;
-  console.log(state, audio);
   setTimeout(playAudio, 800);
 
   function playAudio() {

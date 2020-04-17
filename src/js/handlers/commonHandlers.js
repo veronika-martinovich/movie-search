@@ -1,6 +1,6 @@
-import { state, MODE1, MODE2 } from "./state";
-import { generatePage } from "./generatePage";
-import { changeNavLinksStyles } from "./changeNavLinksStyles";
+import { state, MODE1, MODE2 } from "../state";
+import { generatePage } from "../pages_functions/generatePage";
+import { changeNavLinksStyles } from "../styles_functions/changeNavLinksStyles";
 
 const hamburgerIcon = document.querySelector(".hamburger");
 const nav = document.querySelector(".nav");

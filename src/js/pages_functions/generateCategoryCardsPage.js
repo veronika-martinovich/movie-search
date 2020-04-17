@@ -1,16 +1,16 @@
-import { CategoryCard } from "./CategoryCard";
-import { state } from "./state";
-import { createPageHeading } from "./createPageHeading";
-import { addCategoryCardHandlers } from "./addCategoryCardHandlers";
+import { CategoryCard } from "../classes/CategoryCard";
+import { state } from "../state";
+import { addPageHeading } from "../elements/addPageHeading";
+import { addCategoryCardHandlers } from "../handlers/addCategoryCardHandlers";
 
 const categoryCards = [];
 function generateCategoryCardsPage(categories) {
   const wrapper = document.querySelector(".wrapper");
-  wrapper.innerHTML = '';
+  wrapper.innerHTML = "";
   const navLinks = document.querySelectorAll(".nav__link");
-  createPageHeading(state.page);
+  addPageHeading(state.page);
 
-  const cardsLayout = document.createElement('div');
+  const cardsLayout = document.createElement("div");
   cardsLayout.classList.add("cards-layout");
 
   categories.forEach((category) => {

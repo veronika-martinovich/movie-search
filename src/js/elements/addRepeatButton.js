@@ -1,4 +1,4 @@
-import {addRepeatButtonHandler} from "./addRepeatButtonHandler";
+import { addRepeatButtonHandler } from "../handlers/addRepeatButtonHandler";
 
 export function addRepeatButton() {
   const repeatButton = document.createElement("button");

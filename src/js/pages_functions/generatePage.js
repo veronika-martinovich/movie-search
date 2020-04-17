@@ -1,7 +1,7 @@
-import { categories, words } from "./data";
+import { categories, words } from "../data";
 import { generateCategoryCardsPage } from "./generateCategoryCardsPage";
 import { generateWordCardsPage } from "./generateWordCardsPage";
-import { state } from "./state";
+import { state } from "../state";
 
 export function generatePage(page) {
   switch (page) {

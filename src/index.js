@@ -1,5 +1,3 @@
 import "./js/state";
-import "./js/generatePage";
-import "./js/headerHandlers";
-
-
+import "./js/pages_functions/generatePage";
+import "./js//handlers/commonHandlers";
