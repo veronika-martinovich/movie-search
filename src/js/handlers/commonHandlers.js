@@ -46,3 +46,14 @@ document.body.addEventListener("click", function (e) {
     nav.classList.remove("nav_active");
   }
 });
+
+window.matchMedia("screen and (max-width: 1020px)").addListener(function (e) {
+  if (e.matches && state.page !== "all_categories") {
+    const cardsLayout = document.querySelector(".cards-layout");
+    cardsLayout.addEventListener("click", function (e) {
+      if (e.target.classList.contains("word-card__back")) {
+        e.target.parentElement.classList.remove("word-card_flipped");
+      }
+    })
+  }
+});

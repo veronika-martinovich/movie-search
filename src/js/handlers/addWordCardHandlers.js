@@ -6,15 +6,24 @@ export function addWordCardHandlers(cardsLayout, audio) {
       let audioWord = "";
       if (e.target.classList.contains("word-card")) {
         audioWord = e.target.dataset.word;
-        audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
+        audio.setAttribute(
+          "src",
+          `./src/audio/word_card_audio/${audioWord}.mp3`
+        );
       }
       if (e.target.classList.contains("word-card__img")) {
         audioWord = e.target.parentElement.parentElement.dataset.word;
-        audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
+        audio.setAttribute(
+          "src",
+          `./src/audio/word_card_audio/${audioWord}.mp3`
+        );
       }
       if (e.target.classList.contains("word-card__text")) {
         audioWord = e.target.parentElement.parentElement.dataset.word;
-        audio.setAttribute("src", `./src/audio/word_card_audio/${audioWord}.mp3`);
+        audio.setAttribute(
+          "src",
+          `./src/audio/word_card_audio/${audioWord}.mp3`
+        );
       }
       if (e.target.classList.contains("word-card__translation-icon")) {
         e.target.parentElement.parentElement.classList.add("word-card_flipped");
@@ -24,10 +33,10 @@ export function addWordCardHandlers(cardsLayout, audio) {
 
   cardsLayout.addEventListener("mouseout", function (e) {
     if (
-      e.target.classList.contains("word-card") ||
-      e.target.classList.contains("word-card__back")
+      e.target.classList.contains("word-card__back") &&
+      !event.relatedTarget.classList.contains("word-card__translation-text")
     ) {
-      e.target.classList.remove("word-card_flipped");
+      e.target.parentElement.classList.remove("word-card_flipped");
     }
-  });
+  })  
 }
