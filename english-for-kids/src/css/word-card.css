@@ -20,7 +20,7 @@
   top: 6px;
   font-size: 2rem;
   line-height: 2rem;
-  color: rgb(197, 240, 44);
+  color: rgb(188, 219, 76);
   z-index: 1;
 } 
 
@@ -33,7 +33,7 @@
 }
 
 .word-card_train {
-  border: 3px solid rgb(194, 224, 85);
+  border: 3px solid rgb(188, 219, 76);
 }
 
 .word-card_play {
