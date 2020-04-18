@@ -26,6 +26,12 @@ export function generatePage(page) {
     case "emotions":
       generateWordCardsPage(words[5]);
       break;
+    case "food":
+      generateWordCardsPage(words[6]);
+      break;
+    case "house":
+      generateWordCardsPage(words[7]);
+      break;
   }
 }
 

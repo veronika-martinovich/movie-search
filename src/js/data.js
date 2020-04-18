@@ -5,6 +5,8 @@ const categories = [
   { title: "Animals pt. 2", name: "animals_2" },
   { title: "Clothes", name: "clothes" },
   { title: "Emotions", name: "emotions" },
+  { title: "Food", name: "food" },
+  { title: "House", name: "house" }
 ];
 
 const words = [
@@ -308,6 +310,106 @@ const words = [
       audio: "./src/audio/word_card_audio/laugh.mp3",
     },
   ],
+  [
+    {
+      word: "bread",
+      translation: "хлеб",
+      imageSrc: "./src/img/word_card_img/bread.jpg",
+      audio: "./src/audio/word_card_audio/bread.mp3",
+    },
+    {
+      word: "corn",
+      translation: "кукуруза",
+      imageSrc: "./src/img/word_card_img/corn.jpg",
+      audio: "./src/audio/word_card_audio/corn.mp3",
+    },
+    {
+      word: "garlic",
+      translation: "чеснок",
+      imageSrc: "./src/img/word_card_img/garlic.jpg",
+      audio: "./src/audio/word_card_audio/garlic.mp3",
+    },
+    {
+      word: "jam",
+      translation: "варенье, джем",
+      imageSrc: "./src/img/word_card_img/jam.jpg",
+      audio: "./src/audio/word_card_audio/jam.mp3",
+    },
+    {
+      word: "onion",
+      translation: "лук",
+      imageSrc: "./src/img/word_card_img/onion.jpg",
+      audio: "./src/audio/word_card_audio/onion.mp3",
+    },
+    {
+      word: "pepper",
+      translation: "перец",
+      imageSrc: "./src/img/word_card_img/pepper.jpg",
+      audio: "./src/audio/word_card_audio/pepper.mp3",
+    },
+    {
+      word: "plum",
+      translation: "слива",
+      imageSrc: "./src/img/word_card_img/plum.jpg",
+      audio: "./src/audio/word_card_audio/plum.mp3",
+    },
+    {
+      word: "walnut",
+      translation: "грецкий орех",
+      imageSrc: "./src/img/word_card_img/walnut.jpg",
+      audio: "./src/audio/word_card_audio/walnut.mp3",
+    },
+  ],
+  [
+    {
+      word: "bed",
+      translation: "кровать",
+      imageSrc: "./src/img/word_card_img/bed.jpg",
+      audio: "./src/audio/word_card_audio/bed.mp3",
+    },
+    {
+      word: "chair",
+      translation: "стул",
+      imageSrc: "./src/img/word_card_img/chair.jpg",
+      audio: "./src/audio/word_card_audio/chair.mp3",
+    },
+    {
+      word: "cup",
+      translation: "кружка",
+      imageSrc: "./src/img/word_card_img/cup.jpg",
+      audio: "./src/audio/word_card_audio/cup.mp3",
+    },
+    {
+      word: "cutlery",
+      translation: "столовые приборы",
+      imageSrc: "./src/img/word_card_img/cutlery.jpg",
+      audio: "./src/audio/word_card_audio/cutlery.mp3",
+    },
+    {
+      word: "pillow",
+      translation: "подушка",
+      imageSrc: "./src/img/word_card_img/pillow.jpg",
+      audio: "./src/audio/word_card_audio/pillow.mp3",
+    },
+    {
+      word: "shelf",
+      translation: "полка",
+      imageSrc: "./src/img/word_card_img/shelf.jpg",
+      audio: "./src/audio/word_card_audio/shelf.mp3",
+    },
+    {
+      word: "towel",
+      translation: "полотенце",
+      imageSrc: "./src/img/word_card_img/towel.jpg",
+      audio: "./src/audio/word_card_audio/towel.mp3",
+    },
+    {
+      word: "window",
+      translation: "окно",
+      imageSrc: "./src/img/word_card_img/window.jpg",
+      audio: "./src/audio/word_card_audio/window.mp3",
+    },
+  ]
 ];
 
 export { categories, words };

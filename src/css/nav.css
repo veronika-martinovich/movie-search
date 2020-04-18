@@ -13,6 +13,7 @@
   font-weight: 500;
   transition: 0.4s;
   z-index: 3;
+  overflow: scroll;
 }
 
 .nav_active {
