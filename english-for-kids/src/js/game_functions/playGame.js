@@ -34,20 +34,22 @@ export function playGame() {
   }
 
   function cardClickHandler(e) {
-    if (
-      e.target.parentElement.parentElement.dataset.word ===
-      shuffledWordCards[shuffledWordCards.length - 1].word
-    ) {
-      counterSuccess++;
-      audio.setAttribute("src", "./src/audio/game_sounds/correct.mp3");
-      e.target.classList.add("word-card__img_disabled");
-      addStarIcon("success");
-      shuffledWordCards.pop();
-      setTimeout(playAudio, 800);
-    } else if (!e.target.classList.contains("cards-layout")) {
-      counterFailure++;
-      audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");
-      addStarIcon("failure");
-    }
+    if (!e.target.classList.contains("word-card__img_disabled")) {
+      if (
+        e.target.parentElement.parentElement.dataset.word ===
+        shuffledWordCards[shuffledWordCards.length - 1].word
+      ) {
+        counterSuccess++;
+        audio.setAttribute("src", "./src/audio/game_sounds/correct.mp3");
+        e.target.classList.add("word-card__img_disabled");
+        addStarIcon("success");
+        shuffledWordCards.pop();
+        setTimeout(playAudio, 800);
+      } else if (!e.target.classList.contains("cards-layout")) {
+        counterFailure++;
+        audio.setAttribute("src", "./src/audio/game_sounds/error.mp3");
+        addStarIcon("failure");
+      }
+    } 
   }
 }
