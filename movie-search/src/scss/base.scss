@@ -1,0 +1,14 @@
+$font-family: 'Roboto', sans-serif;
+$font-color: #ffffff;
+
+@mixin font($family, $size, $weight, $color) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+body {
+  @include font($font-family, 10px, 400, $font-color);
+  background-color: #404f5c;
+}
