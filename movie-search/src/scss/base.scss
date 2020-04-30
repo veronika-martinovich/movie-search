@@ -1,14 +1,9 @@
-$font-family: 'Roboto', sans-serif;
-$font-color: #ffffff;
-
-@mixin font($family, $size, $weight, $color) {
-  font-family: $family;
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
+body {
+  @include font($font-family, 10px, 400, $primary-font-color);
+  background-color: $bg-body-color;
 }
 
-body {
-  @include font($font-family, 10px, 400, $font-color);
-  background-color: #404f5c;
+.wrapper {
+  max-width: 1288px;
+  margin: 0 auto;
 }

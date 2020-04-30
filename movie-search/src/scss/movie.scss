@@ -1,0 +1,100 @@
+.movie-container {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie {
+  width: 350px;
+  height: 450px;
+  background-color: $film-color;
+  position: relative;
+  box-shadow: $box-shadow;
+  display: flex;
+  
+  &:before,
+  &:after {
+    content: "";
+    height: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    clip-path: polygon(
+      0% 0%,
+      5% 100%,
+      10% 0%,
+      16% 100%,
+      20% 0%,
+      25% 100%,
+      29% 0%,
+      35% 100%,
+      40% 0%,
+      44% 100%,
+      50% 0%,
+      56% 100%,
+      60% 0%,
+      67% 100%,
+      70% 0%,
+      75% 100%,
+      79% 0%,
+      85% 100%,
+      91% 0%,
+      95% 100%,
+      100% 0%
+    );
+  }
+  &:before {
+    background-color: $bg-body-color;
+    top: 0;
+  }
+  &:after {
+    background-color: $film-color;
+    bottom: -5px;
+  }
+  &:nth-child(n+4) {
+    display: none;
+  }
+}
+
+.movie__content {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.movie__poster {
+  width: 220px;
+  height: 296px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.movie__title {
+  @include font($font-family, 1.3rem, 500, $primary-font-color);
+  margin: 10px auto;
+  text-align: center;
+}
+
+.movie__year {
+  @include font($font-family, 0.9rem, 700, $primary-font-color);
+  margin: 0 auto;
+}
+
+.movie__rate {
+  @include font($font-family, 0.9rem, 700, $primary-font-color);
+  width: 45px;
+  height: 45px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  right: -10px;
+  padding-top: 11px;
+}

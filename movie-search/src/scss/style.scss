@@ -1,6 +1,15 @@
+// Common
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./normalize.scss";
+
 // Base
 @import "./base.scss";
-@import "./normalize.scss";
 
 // Header 
 @import "./header.scss";
+
+// Movie
+@import "./search.scss";
+@import "./movie.scss";
+@import "./film-border.scss";

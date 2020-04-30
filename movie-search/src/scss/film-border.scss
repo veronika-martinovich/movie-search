@@ -1,0 +1,15 @@
+.film-border {
+ width: 75px;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.film-border__cell {
+  width: 25px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: $film-cell-color;
+}

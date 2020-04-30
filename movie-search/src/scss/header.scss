@@ -1,10 +1,11 @@
 .header {
-  height: 100px;
+  height: 90px;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #353f47;
+  background-color: $header-color;
+  box-shadow: $box-shadow;
 }
 
 .logo {
@@ -14,9 +15,10 @@
 }
 
 .logo__text {
-  @include font($font-family, 2.5rem, 700, $font-color);
+  @include font($font-family, 2.5rem, 700, $primary-font-color);
   letter-spacing: 2px;
-  margin-right: 10px;
+  margin-left: 10px;
+  text-transform: lowercase;
 }
 
 .logo__icon {
