@@ -12,7 +12,7 @@ export class Movie {
   }
 
   render() {
-    return ` <div class="movie">
+    return ` <div class="movie swiper-slide">
           ${new FilmBorder(15).render()}
           <div class="movie__content">
             <div class="movie__poster" style="background-image: url(${this.state.poster})"></div>

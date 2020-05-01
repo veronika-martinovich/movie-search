@@ -10,6 +10,8 @@
 @import "./header.scss";
 
 // Movie
+@import "../../node_modules/swiper/css/swiper.min.css";
 @import "./search.scss";
+@import "./swiper.scss";
 @import "./movie.scss";
 @import "./film-border.scss";

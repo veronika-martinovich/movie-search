@@ -1,20 +1,21 @@
 import { getMovieData } from "./getMovieData";
 import { Movie } from "../classes/Movie";
+import {mySwiper} from '../classes/Swiper';
 
 export async function generateMovies(searchFlags, searchQueries) {
-  const movieContainer = document.querySelector('.movie-container');
+  const mySwiper = document.querySelector('.swiper-container').swiper;
   const movieCards = await getMovieData(searchFlags, searchQueries);
   const movies = [];
   for (let movie of movieCards.Search) {
     const response = await getMovieData(["i"], [movie.imdbID]);
     movie.imdbRating = response.imdbRating;
+    const newMovie = new Movie(movie);
+    movies.push(newMovie.render());
   }
-  movieCards.Search.forEach(item => {
-    console.log(item.imdbRating)
-    const movie = new Movie(item);
-    movieContainer.innerHTML += movie.render();
-    movies.push(movie);
+  movies.forEach(item => {
+    mySwiper.appendSlide(item)
   })
+ 
 }
 
 generateMovies(['s', 'page'], ['star', '1']);

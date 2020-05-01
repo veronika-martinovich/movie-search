@@ -1,0 +1,42 @@
+:root {
+  --swiper-theme-color: #eee608;
+  --swiper-navigation-size: 35px;
+}
+
+.swiper-container {
+  width: 1180px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 700;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.swiper-button {
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: -1px;
+}
+
+.swiper-button-next {
+  right: -1px;
+}
+
+.swiper-pagination {
+  margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  margin: 0 7px;
+}
