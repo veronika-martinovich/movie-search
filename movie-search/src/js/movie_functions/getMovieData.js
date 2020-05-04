@@ -5,7 +5,6 @@ export async function getMovieData(searchFlags, searchQueries) {
     query += `${item}=${searchQueries[index]}&`;
   });
   query += `apikey=${API_KEY}`;
-  console.log(query);
   const movieData = fetch(query).then((response) => response.json());
   return movieData;
 }

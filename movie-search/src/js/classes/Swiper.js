@@ -1,20 +1,34 @@
-import Swiper from '../../../node_modules/swiper/js/swiper';
+import Swiper from "../../../node_modules/swiper/js/swiper";
+import { generateMovies } from "../movie_functions/generateMovies";
+import { state } from "../state";
 
-export const mySwiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  loop: true,
+export const mySwiper = new Swiper(".swiper-container", {
+  direction: "horizontal",
+  /* loop: true, */
   slidesPerView: 3,
   spaceBetween: 35,
   allowTouchMove: true,
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + '</span>';
+      return '<span class="' + className + '">' + "</span>";
     },
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+mySwiper.on("slideChange", async function () {
+  if (
+    ((mySwiper.slides.length - mySwiper.activeIndex) <= 4) &&
+    (state.sliderNextPage <= Math.ceil(state.sliderTotalMovies / 10))
+  ) {
+    await generateMovies(
+      ["s", "page"],
+      [`${state.searchQuery}`, `${state.sliderNextPage}`]
+    );
   }
 });
