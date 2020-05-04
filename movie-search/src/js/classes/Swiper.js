@@ -4,7 +4,6 @@ import { state } from "../state";
 
 export const mySwiper = new Swiper(".swiper-container", {
   direction: "horizontal",
-  /* loop: true, */
   slidesPerView: 3,
   spaceBetween: 35,
   allowTouchMove: true,
@@ -23,7 +22,7 @@ export const mySwiper = new Swiper(".swiper-container", {
 
 mySwiper.on("slideChange", async function () {
   if (
-    ((mySwiper.slides.length - mySwiper.activeIndex) <= 4) &&
+    ((mySwiper.slides.length - mySwiper.activeIndex) <= 6) &&
     (state.sliderNextPage <= Math.ceil(state.sliderTotalMovies / 10))
   ) {
     await generateMovies(

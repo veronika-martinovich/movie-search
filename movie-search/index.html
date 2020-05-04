@@ -6,7 +6,6 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/style.css" />
-    <link rel="stylesheet" href="path/to/swiper.min.css">
   </head>
   <body>
     <header class="header">
@@ -16,7 +15,12 @@
     </header>
     <main>
       <div class="wrapper">
-        <input type="search" name="search-movie" id="">
+        <div class="search">
+          <input type="text" name="search-movie" id="" class="search__text" placeholder="Movie name..." autofocus>
+          <input type="button" value="Search" class="search__button">
+          <span class="search__icon icon_search"></span>
+          <span class="search__icon icon_clear"></span>
+        </div>
         <div class="swiper-container">
           <div class="swiper-wrapper"></div>
           <div class="swiper-pagination"></div>
@@ -27,6 +31,5 @@
       </div>
     </main>
     <script src="./dist/main.js"></script>
-    <script src="path/to/swiper.min.js"></script>
   </body>
 </html>

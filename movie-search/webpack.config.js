@@ -9,6 +9,7 @@ module.exports = (env, options) => {
 
   const config = {
     devtool: isProduction ? 'none' : 'source-map',
+    cache: false,
     entry: ["./src/index.js", "./src/scss/style.scss"],
     output: {
       filename: "main.js",

@@ -9,9 +9,13 @@
 // Header 
 @import "./header.scss";
 
-// Movie
-@import "../../node_modules/swiper/css/swiper.min.css";
+// Search
 @import "./search.scss";
+
+// Swiper
+@import "../../node_modules/swiper/css/swiper.min.css";
 @import "./swiper.scss";
+
+// Movie
 @import "./movie.scss";
 @import "./film-border.scss";

@@ -1,5 +1,5 @@
 export const state = {
-  searchQuery: 'diary',
+  searchQuery: 'guys',
   sliderNextPage: 1,
   sliderTotalMovies: 0 
 }
