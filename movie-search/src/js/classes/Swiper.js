@@ -22,8 +22,9 @@ export const mySwiper = new Swiper(".swiper-container", {
 
 mySwiper.on("slideChange", async function () {
   if (
-    mySwiper.slides.length - mySwiper.activeIndex <= 6 &&
-    state.sliderNextPage <= Math.ceil(state.sliderTotalMovies / 10)
+    mySwiper.slides.length - mySwiper.activeIndex <= state.remainingMovies &&
+    state.sliderNextPage <= Math.ceil(state.sliderTotalMovies / state.moviesPerPage) &&
+    !state.fetchingPage
   ) {
     await generateMovies(
       ["s", "page"],
