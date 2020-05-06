@@ -4,6 +4,8 @@ import { state } from "../state";
 import { mySwiper } from "../classes/Swiper";
 import { addSpinner } from "../spinner_functions/addSpinner";
 import { removeSpinner } from "../spinner_functions/removeSpinner";
+import { showMessage } from "../message_functions/showMessage";
+import { hideMessage } from "../message_functions/hideMessage";
 
 generateMovies(
   ["s", "page", "type"],
@@ -12,14 +14,14 @@ generateMovies(
 
 export async function generateMovies(searchFlags, searchQueries) {
   try {
+    hideMessage();
     addSpinner();
     state.fetchingPage = true;
-    const movieCards = await getMovieData(searchFlags, searchQueries);
-    if (movieCards.Response === "True") {
+    const movieData = await getMovieData(searchFlags, searchQueries);
+    if (movieData.Response === "True") {
       const movies = [];
-      state.sliderTotalMovies = Number(movieCards.totalResults);
-      console.log('next page', state.sliderNextPage, movieCards);
-      for (let movie of movieCards.Search) {
+      state.sliderTotalMovies = Number(movieData.totalResults);
+      for (let movie of movieData.Search) {
         if (movie.Poster === "N/A") continue;
         const response = await getMovieData(["i"], [movie.imdbID]);
         movie.imdbRating =
@@ -27,17 +29,21 @@ export async function generateMovies(searchFlags, searchQueries) {
         const newMovie = new Movie(movie);
         movies.push(newMovie.render());
       }
-      removeSpinner();
+      if (state.sliderNextPage === 1) {
+        mySwiper.removeAllSlides();
+      }
       movies.forEach((item) => {
         mySwiper.appendSlide(item);
       });
       mySwiper.update();
       state.sliderNextPage++;
-    } else {
-      showMessage("")
+    } else if (movieData.Response === "False") {
+      showMessage(`No results for "${state.searchQuery}"`)
     }
+    removeSpinner();
     state.fetchingPage = false;
   } catch (err) {
+    showMessage("Something went wrong. Please, try again later.")
     console.log(err);
   }
 }

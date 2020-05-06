@@ -18,7 +18,6 @@ function searchMovies() {
   if (document.querySelector(".search__text").value) {
     state.sliderNextPage = 1;
     state.searchQuery = document.querySelector(".search__text").value;
-    mySwiper.removeAllSlides();
     generateMovies(["s", "page"], [state.searchQuery, state.sliderNextPage]);
   }
 }

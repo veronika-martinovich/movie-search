@@ -9,8 +9,9 @@ export async function getMovieData(searchFlags, searchQueries) {
     console.log(response)
     if (!response.ok) {
       throw new Error('Data unavailable');
-    }
+    } 
     const movieData = await response.json()
+    console.log(movieData)
     return movieData;
   } catch (err) {
     console.log(err);

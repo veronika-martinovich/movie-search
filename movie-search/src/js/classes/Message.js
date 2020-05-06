@@ -1,12 +1,13 @@
 export class Message {
   constructor(props) {
-    this.message = props.message;
+    this.messageText = props.messageText;
+    this.message = '';
   }
 
   render() {
-    const message = document.createElement("div");
-    message.classList.add("message");
-    message.textContent = this.message;
-    return message;
+    this.message = document.createElement("div");
+    this.message.classList.add("message");
+    this.message.textContent = this.messageText;
+    return this.message;
   }
 }
