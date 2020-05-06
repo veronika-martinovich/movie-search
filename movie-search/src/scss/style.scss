@@ -11,10 +11,14 @@
 
 // Search
 @import "./search.scss";
+@import "./spinner.scss";
 
 // Swiper
 @import "../../node_modules/swiper/css/swiper.min.css";
 @import "./swiper.scss";
+
+// Message
+@import "./message.scss";
 
 // Movie
 @import "./movie.scss";

@@ -1,0 +1,19 @@
+.spinner {
+  position: absolute;
+  right: 155px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #dad4d1;
+  border-top: 3px solid $primary-color;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

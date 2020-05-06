@@ -4,40 +4,16 @@ export class FilmBorder {
   }
 
   render() {
-    return (
-      ` <div class="film-border">
+    return ` <div class="film-border">
         ${this.addCells()}
-      </div>`
-    )
-  }
-
-  addCells(){
-    let template = ``;
-    for (let i = 0; i < this.cellAmount; i++) {
-      template += `<div class="film-border__cell"></div>`
-    }
-    return template;
-  }
-
-
-  /* constructor(cellAmount) {
-    this.cellAmount = cellAmount;
-    this.filmBorder = '';
-    this.filmPartition = '';
-  }
-
-  createFilmBorder() {
-    this.filmBorder = document.createElement('div');
-    this.filmBorder.className = "film-border";
-    this.addCells();
-    return this.filmBorder;
+      </div>`;
   }
 
   addCells() {
+    let template = ``;
     for (let i = 0; i < this.cellAmount; i++) {
-      this.filmCell = document.createElement('div');
-      this.filmCell.className = "film-border__cell";
-      this.filmBorder.append(this.filmCell);
+      template += `<div class="film-border__cell"></div>`;
     }
-  } */
+    return template;
+  }
 }

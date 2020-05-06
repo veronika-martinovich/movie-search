@@ -1,0 +1,5 @@
+.message {
+  @include font($font-family, 1rem, 400, $message-font-color);
+  width: 100%;
+  text-align: center;
+}

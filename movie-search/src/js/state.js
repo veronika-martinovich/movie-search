@@ -1,6 +1,5 @@
 export const state = {
-  searchQuery: 'guys',
+  searchQuery: "guys",
   sliderNextPage: 1,
-  sliderTotalMovies: 0 
-}
- 
+  sliderTotalMovies: 0,
+};
