@@ -7,6 +7,6 @@ export class Message {
     const message = document.createElement("div");
     message.classList.add("message");
     message.textContent = this.message;
-    return spinner;
+    return message;
   }
 }

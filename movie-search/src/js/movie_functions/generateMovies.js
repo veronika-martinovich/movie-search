@@ -20,14 +20,14 @@ export async function generateMovies(searchFlags, searchQueries) {
       state.sliderTotalMovies = Number(movieCards.totalResults);
       console.log('next page', state.sliderNextPage, movieCards);
       for (let movie of movieCards.Search) {
+        if (movie.Poster === "N/A") continue;
         const response = await getMovieData(["i"], [movie.imdbID]);
         movie.imdbRating =
-          response.imdbRating == "N/A" ? "" : response.imdbRating;
+          response.imdbRating === "N/A" ? "" : response.imdbRating;
         const newMovie = new Movie(movie);
         movies.push(newMovie.render());
       }
       removeSpinner();
-      state.fetchingPage = false;
       movies.forEach((item) => {
         mySwiper.appendSlide(item);
       });
@@ -36,6 +36,7 @@ export async function generateMovies(searchFlags, searchQueries) {
     } else {
       showMessage("")
     }
+    state.fetchingPage = false;
   } catch (err) {
     console.log(err);
   }

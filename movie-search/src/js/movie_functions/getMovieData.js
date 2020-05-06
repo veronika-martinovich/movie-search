@@ -6,6 +6,7 @@ export async function getMovieData(searchFlags, searchQueries) {
       query += `&${item}=${searchQueries[index]}`;
     });
     const response = await fetch(query);
+    console.log(response)
     if (!response.ok) {
       throw new Error('Data unavailable');
     }
