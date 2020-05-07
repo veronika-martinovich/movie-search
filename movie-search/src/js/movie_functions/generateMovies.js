@@ -9,13 +9,17 @@ import { hideMessage } from "../message_functions/hideMessage";
 
 generateMovies(
   ["s", "page", "type"],
-  [state.searchQuery, state.sliderNextPage, "movie"]
+  [state.searchQuery, state.sliderNextPage, "movie"],
+  false
 );
 
-export async function generateMovies(searchFlags, searchQueries) {
+export async function generateMovies(searchFlags, searchQueries, translated) {
   try {
     hideMessage();
     addSpinner();
+    if (translated) {
+      showMessage(`Showing results for "${state.searchQuery}".`);
+    }
     state.fetchingPage = true;
     const movieData = await getMovieData(searchFlags, searchQueries);
     if (movieData.Response === "True") {
@@ -38,12 +42,12 @@ export async function generateMovies(searchFlags, searchQueries) {
       mySwiper.update();
       state.sliderNextPage++;
     } else if (movieData.Response === "False") {
-      showMessage(`No results for "${state.searchQuery}"`)
+      showMessage(`No results for "${state.searchQuery}".`);
     }
     removeSpinner();
     state.fetchingPage = false;
   } catch (err) {
-    showMessage("Something went wrong. Please, try again later.")
+    showMessage("Something went wrong. Please, try again later.");
     console.log(err);
   }
 }
