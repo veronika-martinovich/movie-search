@@ -18,7 +18,7 @@
     </header>
     <main>
       <div class="wrapper">
-        <div class="search">
+        <form class="search">
           <input
             type="text"
             name="search-movie"
@@ -26,11 +26,12 @@
             class="search__text"
             placeholder="Movie name..."
             autofocus
+            autocomplete="off"
           />
-          <input type="button" value="Search" class="search__button" />
+          <input type="submit" value="Search" class="search__button" />
           <span class="search__icon icon_search"></span>
           <span class="search__icon icon_clear"></span>
-        </div>
+        </form>
         <div class="swiper-container">
           <div class="swiper-wrapper"></div>
           <div class="swiper-pagination"></div>

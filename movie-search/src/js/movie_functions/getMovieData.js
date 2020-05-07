@@ -6,12 +6,10 @@ export async function getMovieData(searchFlags, searchQueries) {
       query += `&${item}=${searchQueries[index]}`;
     });
     const response = await fetch(query);
-    console.log(response)
-    if (!response.ok) {
+    if (response.status == 404 || response.status == 500) {
       throw new Error('Data unavailable');
     } 
     const movieData = await response.json()
-    console.log(movieData)
     return movieData;
   } catch (err) {
     console.log(err);

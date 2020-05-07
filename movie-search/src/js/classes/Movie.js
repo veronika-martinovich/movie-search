@@ -17,7 +17,7 @@ export class Movie {
           <div class="movie__content">
             <div class="movie__poster" style="background-image: url(${
               this.state.poster
-            })"></div>
+            }), url('./src/img/dummy-image.jpg')" ></div>
             <h4 class="movie__title">${this.state.title}</h4>
             <p class="movie__year">${this.state.year}</p>
             <div class="movie__rate">${this.state.rate}</div>

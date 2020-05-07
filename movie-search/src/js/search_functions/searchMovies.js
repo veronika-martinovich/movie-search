@@ -1,20 +1,12 @@
 import { state } from "../state";
-import { mySwiper } from "../classes/Swiper";
 import { generateMovies } from "../movie_functions/generateMovies";
 
 document
-  .querySelector(".search__button")
-  .addEventListener("click", searchMovies);
+  .querySelector(".search")
+  .addEventListener("submit", searchMovies);
 
-document.addEventListener("keydown", handleKeydown);
-
-function handleKeydown() {
-  if (event.code === "Enter") {
-    searchMovies();
-  }
-}
-
-function searchMovies() {
+function searchMovies(e) {
+  e.preventDefault();
   if (document.querySelector(".search__text").value) {
     state.sliderNextPage = 1;
     state.searchQuery = document.querySelector(".search__text").value;
