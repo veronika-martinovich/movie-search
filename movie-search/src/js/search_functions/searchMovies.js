@@ -1,5 +1,5 @@
-import { state } from "../state";
-import { generateMovies } from "../movie_functions/generateMovies";
+import { state } from "../page_functions_and_state/state";
+import { updatePage } from "../page_functions_and_state/updatePage";
 import { translateMovie } from "../movie_functions/translateMovie";
 
 document
@@ -18,6 +18,6 @@ async function searchMovies(e) {
     state.sliderNextPage = 1;
     state.searchQuery = searchText;
     console.log(state.searchQuery);
-    generateMovies(["s", "page"], [state.searchQuery, state.sliderNextPage], translated);
+    updatePage(["s", "page"], [state.searchQuery, state.sliderNextPage], translated);
   }
 }

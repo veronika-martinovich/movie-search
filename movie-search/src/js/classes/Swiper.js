@@ -1,6 +1,6 @@
 import Swiper from "../../../node_modules/swiper/js/swiper";
-import { generateMovies } from "../movie_functions/generateMovies";
-import { state } from "../state";
+import { updatePage } from "../page_functions_and_state/updatePage";
+import { state } from "../page_functions_and_state/state";
 
 export const mySwiper = new Swiper(".swiper-container", {
   direction: "horizontal",
@@ -26,7 +26,7 @@ mySwiper.on("slideChange", async function () {
     state.sliderNextPage <= Math.ceil(state.sliderTotalMovies / state.moviesPerPage) &&
     !state.fetchingPage
   ) {
-    await generateMovies(
+    await updatePage(
       ["s", "page"],
       [`${state.searchQuery}`, `${state.sliderNextPage}`]
     );

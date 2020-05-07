@@ -69,6 +69,11 @@
   @include font($font-family, 1.3rem, 500, $primary-font-color);
   margin: 10px auto;
   text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .movie__year {
