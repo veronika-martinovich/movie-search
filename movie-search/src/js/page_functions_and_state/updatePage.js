@@ -18,7 +18,7 @@ export async function updatePage(searchFlags, searchQueries, translated) {
     state.fetchingPage = true;
     addSpinner();
     if (translated) {
-      showMessage(`Showing results for "${state.searchQuery}".`);
+      showMessage(`Showing results for "${state.searchQuery}"`);
     }
     const movieData = await getMovieData(searchFlags, searchQueries);
     await generateMovies(movieData);

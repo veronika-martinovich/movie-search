@@ -1,0 +1,30 @@
+.footer {
+  width: 100%;
+  background-color: $header-color;
+}
+
+.footer-wrapper {
+  @include font($font-family, 0.8rem, 300, $primary-font-color);
+  width: 1180px;
+  height: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__social-media {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.icon_github {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icon_github.svg");
+  background-size: cover;
+  margin-right: 6px;
+}

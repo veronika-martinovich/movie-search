@@ -27,6 +27,6 @@ export async function generateMovies(movieData) {
 
     state.sliderNextPage++;
   } else if (movieData.Response === "False") {
-    showMessage(`No results for "${state.searchQuery}".`);
+    showMessage(`No results for "${state.searchQuery}"`);
   }
 }

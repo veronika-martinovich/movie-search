@@ -9,7 +9,7 @@
 }
 
 .search__button {
-  @include font($font-family, 1rem, 500, $primary-font-color);
+  @include font($font-family, 1rem, 500, $film-color);
   height: 42px;
   width: $button-width;
   border-radius: 4px;
