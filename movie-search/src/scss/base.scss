@@ -7,3 +7,36 @@ body {
   max-width: 1288px;
   margin: 0 auto;
 }
+
+@include media-laptop {
+  .wrapper {
+    max-width: 1020px;
+  }
+}
+
+@include media-tablet-big {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+
+@include media-tablet-small {
+  .wrapper {
+    max-width: 480px;
+    overflow-x: hidden;
+  }
+}
+
+@include media-mobile-big {
+  .wrapper {
+    max-width: 375px;
+    overflow-x: hidden;
+  }
+}
+
+@include media-mobile-small {
+  .wrapper {
+    max-width: 320px;
+    overflow-x: hidden;
+  }
+}

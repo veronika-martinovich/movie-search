@@ -7,6 +7,23 @@ export const mySwiper = new Swiper(".swiper-container", {
   slidesPerView: 3,
   spaceBetween: 35,
   allowTouchMove: true,
+  breakpoints: {
+    // when window width is >= 1020px
+    1020: {
+      slidesPerView: 2,
+      spaceBetween: 40
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 640px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 35
+    }
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

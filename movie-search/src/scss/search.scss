@@ -57,3 +57,31 @@
   background-image: url("../img/icon_clear.png");
   cursor: pointer;
 }
+
+@include media-tablet-small {
+  .search {
+    max-width: 90%;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+
+  .icon_search {
+    left: 66px;
+    top: 6px;
+  }
+
+  .icon_clear {
+    right: 66px;
+    top: 6px;
+  }
+
+  .search__button {
+    margin-top: 15px;
+  }
+}
+
+@include media-mobile-big {
+  .search {
+    max-width: 100%;
+  }
+}

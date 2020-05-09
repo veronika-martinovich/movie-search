@@ -6,14 +6,13 @@
 .swiper-container {
   width: 1180px;
   margin: 0 auto;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 30px;
   font-weight: 700;
 }
 
 .swiper-wrapper {
   width: 100%;
+  height: 460px;
   padding-bottom: 30px;
 }
 
@@ -37,4 +36,53 @@
   width: 11px;
   height: 11px;
   margin: 0 7px;
+}
+
+@include media-laptop {
+  .swiper-container {
+    max-width: 800px;
+  }
+}
+
+@include media-tablet-big {
+  .swiper-container {
+    max-width: 760px;
+    padding: 20px;
+  }
+}
+
+@include media-tablet-small {
+  .swiper-container {
+    max-width: 410px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@include media-mobile-big {
+  .swiper-container {
+    max-width: 370px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .swiper-button-prev {
+    left: 0px;
+  }
+  
+  .swiper-button-next {
+    right: 0px;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+}
+
+@include media-mobile-small {
+  .swiper-container {
+    max-width: 310px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

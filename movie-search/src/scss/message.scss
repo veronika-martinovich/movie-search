@@ -1,7 +1,12 @@
 .message {
   @include font($font-family, 1rem, 400, $message-font-color);
   width: 100%;  
-  padding-bottom: 20px;
   text-align: center;
   line-height: 2.5rem;
+}
+
+@include media-tablet-small {
+  .message {
+    line-height: 1.9rem;
+  }
 }

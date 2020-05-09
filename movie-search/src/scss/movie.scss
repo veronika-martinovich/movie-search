@@ -70,6 +70,7 @@
   margin: 10px auto;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -92,4 +93,15 @@
   bottom: 15px;
   right: -5px;
   padding-top: 11px;
+}
+
+@include media-mobile-small {
+  .movie {
+    max-width: 295px;
+    min-width: 295px;
+  }
+
+  .movie__content {
+    width: 235px;
+  }
 }
