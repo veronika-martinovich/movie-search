@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
+require("@babel/polyfill");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
@@ -10,7 +11,7 @@ module.exports = (env, options) => {
   const config = {
     devtool: isProduction ? 'none' : 'source-map',
     cache: false,
-    entry: ["./src/index.js", "./src/scss/style.scss"],
+    entry: ["@babel/polyfill", "./src/index.js", "./src/scss/style.scss"],
     output: {
       filename: "main.js",
       path: path.resolve(__dirname, "dist"),
@@ -19,7 +20,7 @@ module.exports = (env, options) => {
       rules: [
         {
           test: /\.m?js$/,
-          exclude: /(node_modules)/,
+          exclude: /(node_modules|bower_components)/,
           use: {
             loader: 'babel-loader',
             options: {
