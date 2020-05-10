@@ -6,7 +6,15 @@ document
   .querySelector(".search")
   .addEventListener("submit", searchMovies);
 
-async function searchMovies(e) {
+document.addEventListener('keyup', handleKeyPress);
+
+function handleKeyPress(e) {
+  if (e.code == "Enter") {
+    searchMovies(e);
+  }
+}
+
+export async function searchMovies(e) {
   e.preventDefault();
   let searchText = document.querySelector(".search__text").value;
   let translated = false;

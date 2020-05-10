@@ -31,7 +31,7 @@
   border: 1px solid #dbd6d3;
   border-radius: 4px;
   padding-left: 45px;
-  padding-right: 45px;
+  padding-right: 140px;
   outline: none;
 
   &::placeholder {
@@ -82,8 +82,7 @@
   }
 
   .icon_search {
-    left: 66px;
-    top: 6px;
+    display: none;
   }
 
   .icon_clear {
@@ -91,8 +90,22 @@
     top: 6px;
   }
 
+  .icon_microphone {
+    right: 95px;
+    top: 6px;
+  }
+
+  .icon_keyboard {
+    display: none;
+  }
+
   .search__button {
     margin-top: 15px;
+  }
+
+  .search__text {
+    padding-left: 7px;
+    padding-right: 95px;
   }
 }
 

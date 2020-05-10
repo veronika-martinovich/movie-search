@@ -1,3 +1,5 @@
+import { searchMovies } from "../search_functions/searchMovies";
+
 export function recognizeSpeech(recognition) {
   const microphone = document.querySelector(".icon_microphone");
   microphone.addEventListener("click", function () {
@@ -5,5 +7,6 @@ export function recognizeSpeech(recognition) {
   });
   recognition.addEventListener("result", function (e) {
     document.querySelector(".search__text").value = e.results[0][0].transcript;
+    searchMovies(e);
   });
 }

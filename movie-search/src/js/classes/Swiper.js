@@ -4,10 +4,13 @@ import { state } from "../page_functions_and_state/state";
 
 export const mySwiper = new Swiper(".swiper-container", {
   direction: "horizontal",
-  slidesPerView: 3,
-  spaceBetween: 35,
   allowTouchMove: true,
   breakpoints: {
+    // when window width is >= 1288px
+    1288: {
+      slidesPerView: 3,
+      spaceBetween: 35
+    },
     // when window width is >= 1020px
     1020: {
       slidesPerView: 2,

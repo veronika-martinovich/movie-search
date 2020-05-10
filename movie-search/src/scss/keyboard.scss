@@ -1,0 +1,76 @@
+.keyboard-container {
+  display: none;
+}
+
+.keyboard-container_active {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 45px;
+  left: 85px;
+}
+
+.keyboard {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: #b8b2b2d2;
+  border: 1.5px solid $color-system-button;
+  border-radius: 4px;
+  width: 761px;
+  height: 263px;
+  padding: 15px;
+}
+
+.button_type_input {
+  background-color: $color-input-button;
+}
+
+.button_type_system,
+.button_type_input-system {
+  background-color: $color-system-button;
+}
+
+.button_size_xs {
+  @include button(40px)
+}
+
+.button_size_s {
+  @include button(47px)
+}
+
+.button_size_m {
+  @include button(100px)
+}
+
+.button_size_l {
+  @include button(110px)
+}
+
+.button_size_xl {
+  @include button(350px)
+}
+
+.button_active {
+  background-color: #7c677c;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #6b6868d2;
+}
+
+.button_active_caps {
+  background-color: #7c677c;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #6b6868d2;
+}
+
+@include media-laptop {
+  .keyboard-container_active {
+    left: 15px;
+  }
+}
+
+@include media-tablet-big {
+  .keyboard-container_active {
+    left: -74px;
+  }
+}
