@@ -58,6 +58,22 @@
   cursor: pointer;
 }
 
+.icon_microphone {
+  display: inline-block;
+  right: 150px;
+  background-image: url("../img/icon_microphone.png");
+  cursor: pointer;
+  background-size: cover;
+}
+
+.icon_keyboard {
+  display: inline-block;
+  right: 180px;
+  background-image: url("../img/icon_keyboard.png");
+  cursor: pointer;
+  background-size: cover;
+}
+
 @include media-tablet-small {
   .search {
     max-width: 90%;
