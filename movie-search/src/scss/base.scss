@@ -1,6 +1,7 @@
 body {
   @include font($font-family, 10px, 400, $primary-font-color);
   background-color: $bg-body-color;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -23,20 +24,17 @@ body {
 @include media-tablet-small {
   .wrapper {
     max-width: 480px;
-    overflow-x: hidden;
   }
 }
 
 @include media-mobile-big {
   .wrapper {
     max-width: 375px;
-    overflow-x: hidden;
   }
 }
 
 @include media-mobile-small {
   .wrapper {
     max-width: 320px;
-    overflow-x: hidden;
   }
 }

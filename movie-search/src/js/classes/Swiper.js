@@ -21,10 +21,15 @@ export const mySwiper = new Swiper(".swiper-container", {
       slidesPerView: 2,
       spaceBetween: 20
     },
-    // when window width is >= 640px
+    // when window width is >= 480px
     480: {
       slidesPerView: 1,
       spaceBetween: 35
+    },
+    // when window width is >= 375px
+    375: {
+      slidesPerView: 1,
+      spaceBetween: 0
     }
   },
   pagination: {
