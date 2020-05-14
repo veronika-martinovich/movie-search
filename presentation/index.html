@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="lib/css/slides.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,8 +26,204 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="slide-1" data-background-color="#52a7a0">
+					<h2>History web API</h2>
+				</section>
+				<section class="slide-2" data-background-color="#52a7a0">
+					<h2>What is it?</h2>
+					<br>
+					<p>The <span class="main-text">History API</span> is the way browsers let you:
+						<ul>
+							<li>interact with the browser history</li>
+							<li>trigger the browser navigation methods </li>
+							<li>change the address bar content</li>
+						</ul>
+					</p>
+				</section>
+				<section class="slide-3" data-background-color="#52a7a0">
+					<h2>Why we need this?</h2>
+					<br>
+					<div class="slide-3__scheme scheme">
+						<p class="scheme_level-1">SPA</p>
+						<div class="scheme_level-2">
+							<div><span class="scheme__arrow"></span><p>1 HTML-document</p></div>
+							<div><span class="scheme__arrow"></span><p>many Views</p></div>
+							<div><span class="scheme__arrow"></span><p>the same URL (Address Bar)</p></div>
+						</div>	
+					</div>
+				</section>
+				<section class="slide-4" data-background-color="#52a7a0">
+					<h2>User Experience</h2>
+					<br>
+					<img src="./lib/images/browser-nav-screenshot.png" alt="">
+					<ul>
+						<li>can not use <span class="main-text">back</span> and <span class="main-text">forward</span> buttons</li>
+						<li>can not <span class="main-text">reload</span> 'page'</li>
+						<li>can not <span class="main-text">share</span> the link on the app's 'page'</li>
+					</ul>
+				</section>
+				<section class="slide-5" data-background-color="#52a7a0">
+					<h2>A little history..</h2>
+					<p class="slide-5__url-description">Fragmented URL — url with hash <span class="slide-5__hash-sign">#</span> signs</p>
+					<p class="slide-5__url-heading">URL example:</p>
+					<p class="slide-5__url-example">https://dom.spec.whatwg.org/</p>
+					<p class="slide-5__url-heading">Fragmented URL example:</p>
+					<p class="slide-5__url-example">https://dom.spec.whatwg.org/<span class="slide-5__hashed-url">#nodelist</span></p>
+					<p class="slide-5__url-heading">Fragment ID:</p>
+					<p class="slide-5__url-example">#nodelist</p>
+				</section>
+				<section class="slide-6" data-background-color="#52a7a0">
+					<ul>
+						<li>a Fragment ID specifies a location only within an html-page</li>
+						<li>to change Fragment ID  <code> window </code> object’s <code> hash </code> property exists <pre><code data-trim data-noescape>window.location.hash</code></pre></li>
+					</ul>
+				</section>
+				<section class="slide-7" data-background-color="#52a7a0">
+					<h2>History API vs. Fragmented hash URL</h2>
+				</section>
+				<section class="slide-8" data-background-color="#52a7a0">
+					<h2>What is common</h2>
+					<ul>
+						<li>both do not reload a page while navigating the app to speed up the application</li>
+						<li>both create browser history</li>
+					</ul>
+				</section>
+				<section class="slide-9" data-background-color="#52a7a0">
+					<h6>Pros to use History API</h6>
+					<ul>
+						<li>it looks cleaner (compare two urls):
+							<span class="slide-9__url-example">www.example.com\foo.html#bar</span>
+							<span class="slide-9__url-example">www.example.com\bar</span>
+						</li>
+						<li>SEO is supported</li>
+						<li>you can see the full URL on your server (unlike with # url)</li>
+						<li>you can use hash tag for what it was meant for (as basic web anchors to scroll down the page)</li>
+					</ul>
+				</section>
+				<section class="slide-10" data-background-color="#52a7a0">
+					<h2>Some cons to use History API</h2>
+					<br>
+					<ul>
+						<li>to bookmark or copy link additional server-side actions will be required</li>
+						<li>some old browsers will need polyfill</li>
+					</ul>
+				</section>
+				<section class="slide-11" data-background-color="#52a7a0">
+					<h2>History API</h2>
+					<h2>Details</h2>
+				</section>
+				<section class="slide-12" data-background-color="#52a7a0">
+					<h2>Access</h2>
+					<br>
+					<pre><code data-trim data-noescape>
+						window.history || history
+					</code></pre>
+					<br>
+					<p>History object is unique for each browser tab</p>
+					<img src="./lib/images/browser-tabs.png" alt="">
+				</section>
+				<section class="slide-13" data-background-color="#52a7a0">
+					<h2>Navigate the history</h2>
+					<br>
+					<p>Go back to the previous page:</p>
+					<pre><code data-trim data-noescape>history.back()</code></pre>
+					<br>
+					<p>Forward to the next page:</p>
+					<pre><code data-trim data-noescape>history.forward()</code></pre>
+				</section>
+				<section class="slide-14" data-background-color="#52a7a0">
+					<p>Navigate back or forward multiple levels deep:</p>
+					<pre><code data-trim data-noescape>
+						history.go(-1) //equivalent to history.back()
+						history.go(-2) //equivalent to calling history.back() twice
+						history.go(1) //equivalent to history.forward()
+						history.go(3) //equivalent to calling history.forward() 3 times
+					</code></pre>
+					<br>
+					<p>Check how many entries there are in the history:</p>
+					<pre><code data-trim data-noescape>history.length</code></pre>
+				</section>
+				<section class="slide-15" data-background-color="#52a7a0">
+					<h2>Add an entry to the history</h2>
+					<p class="code-text"><code>history.pushState()</code></p>
+					<p>Accepts <span class="main-text">3</span> parameters</p>
+					<p><span class="scheme__arrow"></span></p>
+					<ul>
+						<li><span class="code-text">1</span> state object which can contain <span class="main-text">anything</span>
+							<p class="slide-15__limitations">Limitations:</p>
+								<p class="slide-15__limitations">- size limit 640Kb</p>
+								<p class="slide-15__limitations">- the object needs to be serializable</p>
+						</li>
+					</ul>
+				</section>
+				<section class="slide-16" data-background-color="#52a7a0">
+					<ul>
+						<li><span class="code-text">2</span> currently unused (pass an empty string)</li>
+						<br>
+						<li><span class="code-text">3</span> URL associated to the new state</li>
+					</ul>
+					<p>Example:</p>
+					<pre><code data-trim data-noescape>
+						// URL: https://example.com
+
+						const state = { name: 'Flavio' }
+						history.pushState(state, '', '/user') // https://example.com/users
+					</code></pre>
+				</section>
+				<section class="slide-17" data-background-color="#52a7a0">
+					<h2>Modify history entries</h2>
+					<p class="code-text"><code>history.replaceState()</code></p>
+					<p><span class="scheme__arrow"></span></p>
+					<p>Example:</p>
+					<pre><code data-trim data-noescape>
+						history.pushState({}, '', '/posts')
+
+						const state = { post: 'first' }
+						history.pushState(state, '', '/post/first')
+
+						const state = { post: 'second' }
+						history.replaceState(state, '', '/post/second')
+
+						history.back() //  /posts
+					</code></pre>
+				</section>
+				<section class="slide-18" data-background-color="#52a7a0">
+					<h2>Access the current history entry state</h2>
+					<br>
+					<p class="code-text"><code>history.state</code></p>
+					<br>
+					<pre><code data-trim data-noescape>
+						const state = { post: 'first' }
+						history.pushState(state, '', '/post/first')
+
+						history.state // { post: 'first' }
+					</code></pre>
+				</section>
+				<section class="slide-19" data-background-color="#52a7a0">
+					<span class="exclamation-mark"></span>
+					<br>
+					<p>Neither <code class="main-text">history.pushState()</code> nor <code class="main-text">history.replaceState()</code> won’t change the content of the page, and will not cause any browser action.</p>
+				</section>
+				<section class="slide-20" data-background-color="#52a7a0">
+					<h2>The 'onpopstate' event</h2>
+					<br>
+					<pre><code data-trim data-noescape>
+						window.onpopstate = event => {
+						 console.log(event.state) 
+						}
+
+						const state = { post: 'first' }
+						history.pushState(state, '', '/post/first') 
+						// { post: 'first' }
+
+						const state = { post: 'second' }
+						history.replaceState(state, '', '/post/second') 
+						// { post: 'second' }
+					</code></pre>
+				</section>
+				<section class="slide-21" data-background-color="#52a7a0">
+					<p>The end</p>
+				</section>
 			</div>
 		</div>
 
