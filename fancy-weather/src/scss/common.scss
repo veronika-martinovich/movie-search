@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 10px;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 1288px;
+  margin: 0 auto;
+}

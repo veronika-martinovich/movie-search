@@ -1,0 +1,75 @@
+.select {
+  @include font($font-family, 1rem, 700, $font-color);
+  position: relative;
+  width: 71px;
+  text-transform: uppercase;
+}
+
+.select__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $control-panel-main-color;
+  border-radius: $border-radius;
+  height: 44px;
+  cursor: pointer;
+}
+
+.select__body {
+  display: flex;
+  flex-direction: column;
+  background-color: $control-panel-main-color;
+  border-radius: $border-radius;
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  transition: all 0.2s;
+}
+
+.select__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $control-panel-main-color;
+  height: 44px;
+  display: none;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $control-panel-secondary-color;
+  }
+  &:first-child {
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+  }
+  &:last-child {
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+}
+
+.select_opened .select__body {
+  max-height: 132px;
+}
+
+.select_opened .select__item {
+  display: flex;
+}
+
+.select__icon {
+  @extend %icon;
+  background-image: url("../image/icon_select.svg");
+  background-size: cover;
+  width: 12px;
+  height: 7px;
+  transition: all 0.3s;
+}
+
+.select__icon_opened {
+  transform: rotate(180deg);
+}
+
+.select__icon_closed {
+  transform: rotate(0deg);
+}

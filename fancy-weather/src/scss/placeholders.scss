@@ -1,0 +1,31 @@
+%input {
+  width: 274px;
+  height: 44px;
+  border: 1px solid rgba(228, 227, 227, 0.2);
+  border-radius: $border-radius;
+  padding: 10px;
+  background-color: $control-panel-secondary-color;
+  @include font($font-family, 1.1rem, 500, $font-color);
+  outline: none;
+
+  &::placeholder {
+    @include font($font-family, 0.9rem, 400, $font-color);
+  }
+}
+
+%button {
+  width: 101px;
+  height: 44px;
+  border: 0;
+  border-radius: $border-radius;
+  background-color: $control-panel-main-color;
+  text-transform: uppercase;
+  @include font($font-family, 0.9rem, 700, $font-color);
+  cursor: pointer;
+}
+
+%icon {
+  display: inline-flex;
+  cursor: pointer; 
+}
+
