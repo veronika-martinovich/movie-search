@@ -1,12 +1,12 @@
 import React from "react";
-import { languages, languageText } from "../js/language/languages";
+import { languages, LanguageContext } from "../Contexts/LanguageContext";
 
 export class SelectLanguage extends React.Component {
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       isOpened: false,
-      selectedItem: languageText[languages[0]],
+      selectedItem: languages[0],
     };
     this.handleItemClick = this.handleItemClick.bind(this);
   }
@@ -38,10 +38,15 @@ export class SelectLanguage extends React.Component {
             }
           ></span>
         </div>
-        <div className="select__body" onClick={this.handleItemClick}>
+        <div
+          className="select__body"
+          onClick={(e) => {
+            this.context.changeLanguage(e.target.textContent);
+          }}
+        >
           {languages.map((lang) => (
-            <div key={lang} className="select__item" value={languageText[lang]}>
-              {languageText[lang]}
+            <div key={lang} className="select__item" value={lang}>
+              {lang}
             </div>
           ))}
         </div>
@@ -49,3 +54,5 @@ export class SelectLanguage extends React.Component {
     );
   }
 }
+
+SelectLanguage.contextType = LanguageContext;

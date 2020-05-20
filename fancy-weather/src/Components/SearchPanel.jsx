@@ -1,4 +1,6 @@
 import React from "react";
+import { LanguageContext} from "../Contexts/LanguageContext";
+import {dictionary} from "../js/language/dictionary";
 
 export class SearchPanel extends React.Component {
   constructor() {
@@ -23,15 +25,17 @@ export class SearchPanel extends React.Component {
             type="text"
             name="searchQuery"
             className="search-panel__input"
-            placeholder="Search city or ZIP"
+            placeholder={dictionary[this.context.language].searchInputPlaceholder}
             value={this.state.searchQuery}
             onChange={this.handleChange}
           />
           <button type="submit" className="search-panel__button">
-            Search
+          {dictionary[this.context.language].searchButtonText}
           </button>
         </form>
       </div>
     );
   }
 }
+
+SearchPanel.contextType = LanguageContext;
