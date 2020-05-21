@@ -1,0 +1,19 @@
+.location__place {
+  @include font($font-family, 44px, 700, $font-color);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.location__city, .location__country {
+  margin-right: 10px;
+}
+
+.location__date-time {
+  @include font($font-family, 24px, 600, $font-color);
+  width: 100%;
+  margin-right: 10px;
+  margin-top: 10px; 
+}

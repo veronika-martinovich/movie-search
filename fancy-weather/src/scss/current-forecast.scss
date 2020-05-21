@@ -1,0 +1,34 @@
+.current-forecast {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.current-forecast__temperature {
+  @include font($font-family, 306px, 700, $font-color);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.current-forecast__degrees-sign {
+  @include font($font-family, 100px, 700, $font-color);
+  display: inline-block;
+  line-height: 230px;
+}
+
+.current-forecast__indicators {
+  @include font($font-family, 22px, 600, $font-color);
+  height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 170px;
+  margin-left: 45px;
+}
+
+.indicators {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

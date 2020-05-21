@@ -1,6 +1,6 @@
 import React from "react";
 import { IconRefreshBg } from "./IconRefreshBg";
-import { SelectLanguage } from "./SelectLanguage";
+import  SelectLanguage  from "./SelectLanguage";
 
 export const ControlPanel = () => {
   return (

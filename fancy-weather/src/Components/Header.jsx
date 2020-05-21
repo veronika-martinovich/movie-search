@@ -1,6 +1,6 @@
 import React from "react";
 import { ControlPanel } from "./ControlPanel";
-import { SearchPanel } from "./SearchPanel";
+import  SearchPanel  from "./SearchPanel";
 
 export const Header = () => {
   return (

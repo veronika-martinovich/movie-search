@@ -1,8 +1,8 @@
 import React from "react";
-import { LanguageContext} from "../Contexts/LanguageContext";
 import {dictionary} from "../js/language/dictionary";
+import { connect } from "react-redux";
 
-export class SearchPanel extends React.Component {
+class SearchPanel extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -25,12 +25,12 @@ export class SearchPanel extends React.Component {
             type="text"
             name="searchQuery"
             className="search-panel__input"
-            placeholder={dictionary[this.context.language].searchInputPlaceholder}
+            placeholder={dictionary[this.props.language].searchInputPlaceholder}
             value={this.state.searchQuery}
             onChange={this.handleChange}
           />
           <button type="submit" className="search-panel__button">
-          {dictionary[this.context.language].searchButtonText}
+          {dictionary[this.props.language].searchButtonText}
           </button>
         </form>
       </div>
@@ -38,4 +38,10 @@ export class SearchPanel extends React.Component {
   }
 }
 
-SearchPanel.contextType = LanguageContext;
+const mapStateToProps = (state) => {
+  return {
+    language: state.language
+  }
+}
+
+export default connect(mapStateToProps, null)(SearchPanel);
