@@ -1,16 +1,61 @@
 export const dictionary = {
   en: {
     searchInputPlaceholder: 'Search city or ZIP',
-    searchButtonText: 'Search'
+    searchButtonText: 'Search',
+    days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    months : [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
   },
   
   ru: {
     searchInputPlaceholder: 'Поиск по городу или индексу',
-    searchButtonText: 'Поиск'
+    searchButtonText: 'Поиск',
+    days: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    months : [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ],
   },
   
   be: {
     searchInputPlaceholder: 'Пошук па горадзе ці індэксе',
-    searchButtonText: 'Пошук'
+    searchButtonText: 'Пошук',
+    days: ["Нд", "Пн", "Аў", "Ср", "Чц", "Пт", "Сб"],
+    months : [
+    "Студзень",
+    "Люты",
+    "Сакавiк",
+    "Красавiк",
+    "Май",
+    "Червень",
+    "Лiпень",
+    "Жнiвень",
+    "Верасень",
+    "Кастрычнiк",
+    "Лiстапад",
+    "Снежань",
+  ],
   }
 }

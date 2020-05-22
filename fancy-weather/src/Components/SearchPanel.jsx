@@ -1,5 +1,5 @@
 import React from "react";
-import {dictionary} from "../js/language/dictionary";
+import { dictionary } from "../js/language/dictionary";
 import { connect } from "react-redux";
 
 class SearchPanel extends React.Component {
@@ -30,7 +30,7 @@ class SearchPanel extends React.Component {
             onChange={this.handleChange}
           />
           <button type="submit" className="search-panel__button">
-          {dictionary[this.props.language].searchButtonText}
+            {dictionary[this.props.language].searchButtonText}
           </button>
         </form>
       </div>
@@ -40,8 +40,8 @@ class SearchPanel extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    language: state.language
-  }
-}
+    language: state.language,
+  };
+};
 
 export default connect(mapStateToProps, null)(SearchPanel);

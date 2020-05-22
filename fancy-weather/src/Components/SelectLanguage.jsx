@@ -41,7 +41,12 @@ class SelectLanguage extends React.Component {
         </div>
         <div
           className="select__body"
-          onClick={(e) => this.props.dispatch({type: 'SELECT_CHANGE', value: e.target.textContent})}
+          onClick={(e) =>
+            this.props.dispatch({
+              type: "SELECT_CHANGE",
+              value: e.target.textContent,
+            })
+          }
         >
           {languages.map((lang) => (
             <div key={lang} className="select__item" value={lang}>
@@ -56,8 +61,8 @@ class SelectLanguage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    language: state.language
-  }
-}
+    language: state.language,
+  };
+};
 
 export default connect(mapStateToProps, null)(SelectLanguage);

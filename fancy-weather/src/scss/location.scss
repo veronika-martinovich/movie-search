@@ -1,14 +1,7 @@
-.location__place {
+.location__name {
   @include font($font-family, 44px, 700, $font-color);
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
   width: 100%;
   text-transform: uppercase;
-}
-
-.location__city, .location__country {
-  margin-right: 10px;
 }
 
 .location__date-time {
